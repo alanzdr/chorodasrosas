@@ -3,12 +3,17 @@ import React from 'react';
 import Hero from './Hero';
 import Poems from './Poems';
 import Footer from 'components/Footer';
+import { IPost } from 'pages/api/posts';
 
-const Home: React.FC = () => {
+interface Props {
+  posts: IPost[]
+}
+
+const Home: React.FC<Props> = ({posts}) => {
   return (
     <>
       <Hero />
-      <Poems />
+      <Poems posts={posts} />
       <Footer />
     </>
   );

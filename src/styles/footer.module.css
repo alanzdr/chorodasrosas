@@ -38,9 +38,20 @@
   margin: 0 auto;
   margin-top: 4rem;
   width: fit-content;
+  cursor: pointer;
 }
 
 .back svg {
   transform: rotate(180deg);
   margin-left: 0.8rem;
+}
+
+.single {
+  flex-direction: row-reverse;
+}
+
+.single svg {
+  transform: rotate(90deg);
+  margin-left: 0;
+  margin-right: 0.8rem;
 }

@@ -1,8 +1,28 @@
-import React from 'react';
+import React, { useCallback } from 'react';
+import { useRouter } from 'next/router'
 
 import styled from 'styles/footer.module.css'
 
-const Footer: React.FC = () => {
+interface Props {
+  single?: boolean
+}
+
+const Footer: React.FC<Props> = ({ single = false }) => {
+  const router = useRouter();
+
+  const handleBackClick = useCallback(
+    (event: React.MouseEvent) => {
+      event.preventDefault();
+      if (single) {
+        router.push('/')
+      } else {
+        const scrollContainer = document.getElementById('__next');
+        scrollContainer.scrollTo(0, 0);
+      }
+    },
+    [router, single],
+  )
+
   return (
     <footer className={styled.footer}>
       <div className={styled.contact}>
@@ -92,7 +112,10 @@ const Footer: React.FC = () => {
           </a>
         </div>
       </div>
-      <a href="#poemas" className={styled.back}>
+      <a 
+        className={`${styled.back} ${single ? styled.single : ''}` }
+        onClick={handleBackClick}
+      >
         <p>VOLTAR</p>
         <svg 
           xmlns="http://www.w3.org/2000/svg" 

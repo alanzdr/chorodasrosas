@@ -1,2 +1,36 @@
 .thumbnail {
+  width: 100%;
+}
+
+.thumbnail > div {
+  width: 100% !important;
+  height: 100%;
+}
+
+.thumbnail > div > div {
+  width: 100% !important;
+  height: 100%;
+}
+
+.thumbnail img {
+  object-fit: cover;
+  object-position: center;
+}
+
+.postContent {
+  padding-top: 8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.title {
+  color: var(--title-color);
+}
+
+.content p {
+  font-size: 1.6rem;
+  line-height: 2;
 }
