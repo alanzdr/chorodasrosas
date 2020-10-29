@@ -1,16 +1,15 @@
 import Head from 'next/head'
 
-import HomeContent from 'contents/Home'
-
-
 const Home = () => {
   return (
     <>
       <Head>
-        <title>Choro das Rosas</title>
+        <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <HomeContent />
+      <div>
+        <h1>Post</h1>
+      </div>
     </>
   )
 }
