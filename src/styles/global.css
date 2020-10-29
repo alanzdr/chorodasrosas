@@ -22,14 +22,6 @@ html {
 body {
   background: var(--background-color);
   font-size: 100%;
-  height: 100vh;
-}
-
-#__next {
-  scroll-behavior: smooth;
-  overflow-y: scroll;
-  scroll-snap-type: y mandatory;
-  height: 100vh;
 }
 
 body,

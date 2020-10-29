@@ -14,10 +14,10 @@ const Footer: React.FC<Props> = ({ single = false }) => {
     (event: React.MouseEvent) => {
       event.preventDefault();
       if (single) {
-        router.push('/')
+        router.back();
       } else {
-        const scrollContainer = document.getElementById('__next');
-        scrollContainer.scrollTo(0, 0);
+        // const scrollContainer = document.getElementById('__next');
+        window.scrollTo(0, 0);
       }
     },
     [router, single],

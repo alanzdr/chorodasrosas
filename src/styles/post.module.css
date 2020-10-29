@@ -30,6 +30,10 @@
   color: var(--title-color);
 }
 
+.content {
+  margin-top: 4rem;
+}
+
 .content p {
   font-size: 1.6rem;
   line-height: 2;
