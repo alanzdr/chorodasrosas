@@ -1,5 +1,5 @@
 <p align="center">
-  <img src=".github/logo.png" width="400" alt="Feirão Vale Tudo Fiat Duna">
+  <img src=".github/logo.png" width="200" alt="Feirão Vale Tudo Fiat Duna">
 </p>
 
 <p align="center">
