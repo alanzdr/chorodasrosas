@@ -2,6 +2,8 @@
   <img src=".github/logo.png" width="200" alt="Feirão Vale Tudo Fiat Duna">
 </p>
 
+<h1 align="center">Choro Das Rosas</h1>
+
 <p align="center">
   <a href="#-why">Why</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-what-is">What is</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
@@ -10,28 +12,26 @@
 </p>
 
 <p align="center">
-  <img alt="License" src="https://img.shields.io/static/v1?label=license&message=MIT&color=ff7e27&labelColor=000000">
+  <img alt="License" src="https://img.shields.io/static/v1?label=license&message=MIT&color=b40f20&labelColor=000000">
 </p>
 
 ## 🤔 Why
 
-The consesionaria needed a fixed page to sell some cars in stock at a fair
+The goal of the project is to create a place where I could put my old poems and be available online for anyone to see
 
 ## ✈ What is
 
-The project was developed to read a car data json file and create a catalog page, where the user could also browse among the cars and click on a button to contact a seller by whatsapp
+The site consists of a page with the list of poems, where each poem leads to his page with the content.  
 
-<!-- <p align="center">
-  <img alt="Prints" src=".github/prints.jpg" width="80%">
-</p> -->
+Text files were used as a source of data for the poems and the images are from a free external bank, using all the power of Next.js to create the static pages of each poem and optimizing the images.
 
 ## 🚀 Technology
 
 *As main tools, were used:*
 
+- [Next.js](https://nextjs.org/) to create all views
 - [React](https://reactjs.org/) to the all web front end
-- [Moment.js](https://momentjs.com/) for all dates and times codes
-- [Tiny Slider - React](https://github.com/jechav/tiny-slider-react) for cars image slider
+- [Typescript](https://www.typescriptlang.org/) To facilitate future changes
 
 ## :memo: License
 
