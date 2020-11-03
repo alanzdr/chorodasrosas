@@ -23,7 +23,9 @@ The goal of the project is to create a place where I could put my old poems and 
 
 The site consists of a page with the list of poems, where each poem leads to his page with the content.  
 
-Text files were used as a source of data for the poems and the images are from a free external bank, using all the power of Next.js to create the static pages of each poem and optimizing the images.
+I created a folder with text files that were used as a data source for the poems and the images are from a free external stock. 
+
+I use all the power of Next.js to create the static pages of each poem and bring the images in an optimized way.
 
 ## 🚀 Technology
 
