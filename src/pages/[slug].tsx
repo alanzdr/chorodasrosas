@@ -1,20 +1,24 @@
 import Head from 'next/head'
-import { getPostBySlug, getAllPosts } from './api/posts';
 import { GetStaticPropsContext } from "next";
 
 import PostContent from 'contents/Post'
-import { IPost } from './api/posts'
+import { getPostBySlug, getAllPosts, IPost } from './api/posts';
+import { getPoemDescription } from 'utils/seo';
 
 interface Props {
   data: IPost
 }
 
 const Post : React.FC<Props> = ({data}) => {
+  const title = `${data.title} - Choro das Rosas`;
+  const description = getPoemDescription(data.title);
   return (
     <>
       <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>{title}</title>
+        <meta property="og:title" content={title} />
+        <meta name="description" content={description} />
+        <meta property="og:description" content={description} />
       </Head>
       <PostContent data={data} />
     </>

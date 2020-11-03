@@ -16,7 +16,6 @@ const Footer: React.FC<Props> = ({ single = false }) => {
       if (single) {
         router.back();
       } else {
-        // const scrollContainer = document.getElementById('__next');
         window.scrollTo(0, 0);
       }
     },

@@ -15,6 +15,33 @@ class Document extends NextDocument {
             href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Roboto:wght@300&display=swap" 
             rel="stylesheet" 
           />
+          <link 
+            rel="icon" 
+            type="image/png" 
+            sizes="96x96"
+            href="/favicon-96x96.png"
+          />
+          <link 
+            rel="icon" 
+            type="image/png" 
+            sizes="32x32"
+            href="/favicon-32x32.png"
+          />
+          <link 
+            rel="icon" 
+            type="image/png" 
+            sizes="16x16" 
+            href="/favicon-16x16.png"
+          />
+          <meta property="og:locale" content="pt_BR" />
+          <meta property="og:site_name" content="Choro das Rosas" />
+          <meta property="og:image" content="https://chorodasrosas.vercel.app/thumbnail.png" />
+          <meta property="og:image:type" content="image/png" />
+          <meta property="og:image:width" content="1200" />
+          <meta property="og:image:height" content="630" />
+          <meta property="og:type" content="article" />
+          <meta name="author" content="Alanderson Zelindro da Rosa" />
+          <meta name="keywords" content="Poemas, Atelier" />
         </Head>
         <body>
           <Main />
