@@ -14,7 +14,7 @@ const Footer: React.FC<Props> = ({ single = false }) => {
     (event: React.MouseEvent) => {
       event.preventDefault();
       if (single) {
-        router.back();
+        router.push('/');
       } else {
         window.scrollTo(0, 0);
       }
