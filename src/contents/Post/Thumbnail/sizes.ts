@@ -9,11 +9,11 @@ const BREAKPOINTS : Size[] = [
     width: 400,
   },
   {
-    height: 600,
+    height: 480,
     width: 1000,
   },
   {
-    height: 480,
+    height: 400,
     width: 1400,
   },
   {
@@ -23,7 +23,7 @@ const BREAKPOINTS : Size[] = [
 ] 
 
 export const getSizes = (width: number) : Size => {
-  if (width <= 400) {
+  if (width <= 600) {
     return BREAKPOINTS[0]
   } else if (width <= 1000) {
     return BREAKPOINTS[1]

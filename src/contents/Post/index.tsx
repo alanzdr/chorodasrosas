@@ -5,6 +5,8 @@ import Content from './Content'
 import Footer from 'components/Footer'
 import { IPost } from 'pages/api/posts';
 
+import styled from 'styles/post.module.css'
+
 interface Props {
   data: IPost
 }
@@ -13,8 +15,10 @@ const Post: React.FC<Props> = ({data}) => {
   return (
     <>
       <Thumbnail src={data.thumb} />
-      <Content title={data.title} content={data.content} />
-      <Footer single />
+      <div className={styled.container}>
+        <Content title={data.title} content={data.content} />
+        <Footer single />
+      </div>
     </>
   );
 }

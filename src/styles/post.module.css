@@ -1,5 +1,11 @@
 .thumbnail {
   width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  height: 30rem;
+  overflow: hidden;
 }
 
 .thumbnail > div {
@@ -15,6 +21,13 @@
 .thumbnail img {
   object-fit: cover;
   object-position: center;
+}
+
+.container {
+  margin-top: 30rem;
+  background: var(--background-color);
+  position: relative;
+  z-index: 10;
 }
 
 .postContent {
@@ -37,4 +50,29 @@
 .content p {
   font-size: 1.6rem;
   line-height: 2;
+}
+
+@media (min-width: 600px) {
+  .thumbnail {
+    height: 48rem;
+  }
+  .container {
+    margin-top: 48rem;
+  }
+}
+@media (min-width: 1000px) {
+  .thumbnail {
+    height: 40rem;
+  }
+  .container {
+    margin-top: 40rem;
+  }
+}
+@media (min-width: 1400px) {
+  .thumbnail {
+    height: 48rem;
+  }
+  .container {
+    margin-top: 48rem;
+  }
 }
