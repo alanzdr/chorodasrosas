@@ -35,13 +35,13 @@ class Document extends NextDocument {
           />
           <meta property="og:locale" content="pt_BR" />
           <meta property="og:site_name" content="Choro das Rosas" />
-          <meta property="og:image" content="https://chorodasrosas.vercel.app/thumbnail.png" />
+          <meta property="og:image" content="https://chorodasrosas.com/thumbnail.png" />
           <meta property="og:image:type" content="image/png" />
           <meta property="og:image:width" content="1200" />
           <meta property="og:image:height" content="630" />
           <meta property="og:type" content="article" />
           <meta name="author" content="Alanderson Zelindro da Rosa" />
-          <meta name="keywords" content="Poemas, Atelier" />
+          <meta name="keywords" content="Poema" />
         </Head>
         <body>
           <Main />

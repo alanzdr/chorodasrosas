@@ -23,8 +23,7 @@ const Home: React.FC<Props> = ({posts}) => {
     <>
       <Head>
         <title>Choro das Rosas - Atelier de Poemas</title>
-        
-        <meta property="og:title" content="Título da página ou artigo" />
+        <meta property="og:title" content="Choro das Rosas - Atelier de Poemas" />
         <meta name="description" content="A pagina nasceu com objetivo de ficar como um atelier online e manter meus poemas para que outras pessoas possam ver e talvez sentir um pouco do que eu estava sentindo quando escrevi." />
         <meta property="og:description" content="A pagina nasceu com objetivo de ficar como um atelier online e manter meus poemas para que outras pessoas possam ver e talvez sentir um pouco do que eu estava sentindo quando escrevi." />
       </Head>
