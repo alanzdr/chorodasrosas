@@ -14,7 +14,7 @@ A muito tempo que não sorri;
 O prazer não te visita mais,  
 As dores são constantes,  
 Os dias são iguais,  
-E mais nada te satisfaz.  
+E nada mais te satisfaz.  
 <br />
 Foi então que respondi,  
 Sabe, foi na dor que aprendi a amar;  
