@@ -1,3 +1,4 @@
+import { useMemo } from 'react'
 import Head from 'next/head'
 
 import HomeContent from 'contents/Home'
@@ -8,16 +9,17 @@ interface Props {
 }
 
 const Home: React.FC<Props> = ({posts}) => {
-
-  const sortedPosts = posts.sort((a, b) => {
-    if ( a.date < b.date ){
-      return 1;
-    }
-    if ( a.date > b.date ){
-      return -1;
-    }
-    return 0;
-  })
+  const sortedPosts = useMemo(() => {
+    return posts.sort((a, b) => {
+      if ( a.date < b.date ){
+        return 1;
+      }
+      if ( a.date > b.date ){
+        return -1;
+      }
+      return 0;
+    })
+  }, [posts])
 
   return (
     <>
