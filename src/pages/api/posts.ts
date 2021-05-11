@@ -12,18 +12,21 @@ export interface IPost {
 export async function getAllPosts() : Promise<IPost[]>{
   const context = require.context('../../data', false, /\.md$/)
   const posts : IPost[] = []
-
+  
   for (const key of context.keys()){
-    const post = key.slice(2)
-    const content = await import(`../../data/${post}`)
-    const meta = matter(content.default)
-
-    posts.push({
-      slug: post.replace('.md', ''),
-      title: meta.data.title,
-      thumb: meta.data.thumb,
-      date: meta.data.date
-    } as IPost)
+    // console.log(key.slice(0, 4))
+    if (key.slice(0, 4) !== 'data') {
+      const post = key.slice(2)
+      const content = await import(`../../data/${post}`)
+      const meta = matter(content.default)
+  
+      posts.push({
+        slug: post.replace('.md', ''),
+        title: meta.data.title,
+        thumb: meta.data.thumb,
+        date: meta.data.date
+      } as IPost)
+    }
   }
 
   return posts
