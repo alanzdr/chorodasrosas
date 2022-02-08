@@ -47,15 +47,10 @@
   overflow: hidden;
 }
 
-.thumbnail > div {
+.thumbnail > span,
+.thumbnail > span > span {
   width: 100% !important;
-  height: 100%;
-}
-
-.thumbnail > div > div {
-  width: 100% !important;
-  padding-top: 0 !important;
-  height: 100%;
+  height: 100% !important;
 }
 
 .thumbnail img {

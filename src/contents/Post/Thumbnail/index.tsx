@@ -1,33 +1,24 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react'
 import Image from 'next/image'
 
-import styled from 'styles/post.module.css'
-
-import { Size, getSizes } from './sizes'
+import styled from '../styles.module.css'
+import { IPost } from 'pages/api/posts'
 
 interface Props {
-  src: string
+  data: IPost
 }
 
-const Thumbnail: React.FC<Props> = ({src}) => {
-  const [size, setSize] = useState<Size>(() => getSizes(0))
-
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      setSize(getSizes(window.innerWidth))
-    }
-  }, [])
-
+const Thumbnail: React.FC<Props> = ({ data }) => {
   return (
     <div className={styled.thumbnail}>
       <Image
-        src={src}
+        src={data.thumb}
         alt="Thumbnail do Poema"
-        height={size.height}
-        width={size.width}
+        height={400}
+        width={1400}
       />
     </div>
-  );
+  )
 }
 
-export default Thumbnail;
+export default Thumbnail

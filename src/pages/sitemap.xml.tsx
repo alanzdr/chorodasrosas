@@ -22,25 +22,25 @@ const createSitemap = (pages: SitemapUrl[]) => `<?xml version="1.0" encoding="UT
     `
 
 const EmptyComponent = () => {
-  return <></>
+  return null
 }
 
 export const getServerSideProps : GetServerSideProps = async ({ res }) => {
   const baseSiteUrl = 'http://chorodasrosas.com'
-  
+
   const urls: SitemapUrl[] = [
     { url: baseSiteUrl, lastmod: new Date().toISOString() }
   ]
 
   const AddUrlPath = (path: string, lastmod: string) => {
     const url = `${baseSiteUrl}/${path}`
-    urls.push({url, lastmod})
+    urls.push({ url, lastmod })
   }
 
   let lastDate: Date
 
   // ADD POTS
-  const posts = await getAllPosts();
+  const posts = await getAllPosts()
   posts.forEach(post => {
     const date = new Date(post.date)
     if (!lastDate || date > lastDate) {

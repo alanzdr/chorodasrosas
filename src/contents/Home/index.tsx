@@ -1,22 +1,22 @@
-import React from 'react';
+import React from 'react'
 
-import Hero from './Hero';
-import Poems from './Poems';
-import Footer from 'components/Footer';
-import { IPost } from 'pages/api/posts';
+import Hero from './Hero'
+import Poems from './Poems'
+import Footer from 'components/Footer'
+import { IPost } from 'pages/api/posts'
 
 interface Props {
   posts: IPost[]
 }
 
-const Home: React.FC<Props> = ({posts}) => {
+const Home: React.FC<Props> = ({ posts }) => {
   return (
     <>
       <Hero />
       <Poems posts={posts} />
-      <Footer />
+      <Footer single={false} />
     </>
-  );
+  )
 }
 
-export default Home;
+export default Home

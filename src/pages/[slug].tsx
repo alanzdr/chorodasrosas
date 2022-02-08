@@ -1,17 +1,18 @@
+import React from 'react'
 import Head from 'next/head'
-import { GetStaticPropsContext } from "next";
+import { GetStaticPropsContext } from 'next'
 
 import PostContent from 'contents/Post'
-import { getPostBySlug, getAllPosts, IPost } from './api/posts';
-import { getPoemDescription } from 'utils/seo';
+import { getPostBySlug, getAllPosts, IPost } from './api/posts'
+import { getPoemDescription } from 'utils/seo'
 
 interface Props {
   data: IPost
 }
 
-const Post : React.FC<Props> = ({data}) => {
-  const title = `${data.title} - Choro das Rosas`;
-  const description = getPoemDescription(data.title);
+const Post : React.FC<Props> = ({ data }) => {
+  const title = `${data.title} - Choro das Rosas`
+  const description = getPoemDescription(data.title)
   return (
     <>
       <Head>
@@ -25,7 +26,7 @@ const Post : React.FC<Props> = ({data}) => {
   )
 }
 
-export async function getStaticProps(context: GetStaticPropsContext) {
+export async function getStaticProps (context: GetStaticPropsContext) {
   return {
     props: {
       data: await getPostBySlug(context.params.slug as string)
@@ -33,14 +34,14 @@ export async function getStaticProps(context: GetStaticPropsContext) {
   }
 }
 
-export async function getStaticPaths() {
+export async function getStaticPaths () {
   const posts = await getAllPosts()
 
   const paths = posts.map(post => {
     return {
       params: { slug: post.slug }
     }
-  });
+  })
 
   return {
     paths: paths,
@@ -48,4 +49,4 @@ export async function getStaticPaths() {
   }
 }
 
-export default Post;
+export default Post

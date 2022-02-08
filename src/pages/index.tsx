@@ -1,4 +1,4 @@
-import { useMemo } from 'react'
+import React, { useMemo } from 'react'
 import Head from 'next/head'
 
 import HomeContent from 'contents/Home'
@@ -8,16 +8,16 @@ interface Props {
   posts: IPost[]
 }
 
-const Home: React.FC<Props> = ({posts}) => {
+const Home: React.FC<Props> = ({ posts }) => {
   const sortedPosts = useMemo(() => {
     return posts.sort((a, b) => {
-      if ( a.date < b.date ){
-        return 1;
+      if (a.date < b.date) {
+        return 1
       }
-      if ( a.date > b.date ){
-        return -1;
+      if (a.date > b.date) {
+        return -1
       }
-      return 0;
+      return 0
     })
   }, [posts])
 
@@ -34,11 +34,11 @@ const Home: React.FC<Props> = ({posts}) => {
   )
 }
 
-export async function getStaticProps() {
-  const posts = await getAllPosts();
+export async function getStaticProps () {
+  const posts = await getAllPosts()
   return {
     props: { posts }
   }
 }
 
-export default Home;
+export default Home

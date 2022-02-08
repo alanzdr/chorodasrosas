@@ -1,15 +1,15 @@
-import React from 'react';
+import React from 'react'
 import Image from 'next/image'
 
-import styled from 'styles/home/poems.module.css'
-import Link from 'components/Link';
-import { IPost } from 'pages/api/posts';
+import styled from './styles.module.css'
+import { IPost } from 'pages/api/posts'
+import Link from 'next/link'
 
 interface Props {
   posts: IPost[]
 }
 
-const Poems: React.FC<Props> = ({posts}) => {
+const Poems: React.FC<Props> = ({ posts }) => {
   return (
     <section id="poemas" className={styled.container}>
       {posts.map((item) => (
@@ -28,7 +28,7 @@ const Poems: React.FC<Props> = ({posts}) => {
         </Link>
       ))}
     </section>
-  );
+  )
 }
 
-export default Poems;
+export default Poems
