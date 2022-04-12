@@ -27,6 +27,9 @@
 }
 
 .postContent {
+  width: 90%;
+  max-width: 110rem;
+  margin: 0 auto;
   padding-top: 4.8rem;
   display: flex;
   flex-direction: column;
