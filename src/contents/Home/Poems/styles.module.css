@@ -32,6 +32,7 @@
 }
 
 .item h2 {
+  text-align: center;
   position: relative;
   z-index: 2;
   color: var(--title-color-on-dark);

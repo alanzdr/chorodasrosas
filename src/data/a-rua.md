@@ -15,6 +15,6 @@ Mudou o rosto, sexo, nome e até as pessoas que se apoiava.
 <br />
 Ela sabia que já estava na hora, caronte estava a sua frente,  
 Não entendia, não era justo, aconteceu tão de repente;  
-Os homens que que lhe apedrejaram viveriam normalmente,  
+Os homens que lhe apedrejaram viveriam normalmente,  
 Enquanto o maior pecado dela era ser um pouco diferente.  
 
