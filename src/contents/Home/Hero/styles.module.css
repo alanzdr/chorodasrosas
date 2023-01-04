@@ -1,5 +1,6 @@
 .container {
   width: 100%;
+  overflow: hidden;
   height: 100vh;
   position: relative;
 }
@@ -13,13 +14,9 @@
   z-index: 0;
 }
 
-.background > span,
-.background > span > span {
+.background img {
   width: 100% !important;
   height: 100% !important;
-}
-
-.background img {
   object-fit: cover;
   object-position: bottom;
 }

@@ -6,15 +6,12 @@
   z-index: 0;
   height: 28rem;
   overflow: hidden;
-}
-
-.thumbnail > span,
-.thumbnail > span > span {
-  width: 100% !important;
-  height: 100% !important;
+  background: #ddd;
 }
 
 .thumbnail img {
+  width: 100% !important;
+  height: 100% !important;
   object-fit: cover;
   object-position: center 35%;
 }
