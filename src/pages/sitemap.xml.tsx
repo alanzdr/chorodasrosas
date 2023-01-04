@@ -49,7 +49,6 @@ export const getServerSideProps : GetServerSideProps = async ({ res }) => {
     AddUrlPath(post.slug, date.toISOString())
   })
 
-  console.log(lastDate)
   if (lastDate) {
     urls[0].lastmod = lastDate.toISOString()
   }
