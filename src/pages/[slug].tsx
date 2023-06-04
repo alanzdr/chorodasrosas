@@ -11,7 +11,7 @@ interface Props {
 }
 
 const Post : React.FC<Props> = ({ data }) => {
-  const title = `${data.title} - Choro das Rosas`
+  const title = `${data.title} - Poema | Choro das Rosas`
   const description = getPoemDescription(data.title)
   return (
     <>
