@@ -1,5 +1,5 @@
 import { GetServerSideProps } from 'next'
-import { getAllPosts } from './api/posts'
+import { getAllPosts } from 'services/posts'
 
 interface SitemapUrl {
   url: string,
@@ -37,10 +37,10 @@ export const getServerSideProps : GetServerSideProps = async ({ res }) => {
     urls.push({ url, lastmod })
   }
 
-  let lastDate: Date
-
   // ADD POTS
   const posts = await getAllPosts()
+  let lastDate: Date = new Date(posts[0].date)
+
   posts.forEach(post => {
     const date = new Date(post.date)
     if (!lastDate || date > lastDate) {
@@ -49,9 +49,7 @@ export const getServerSideProps : GetServerSideProps = async ({ res }) => {
     AddUrlPath(post.slug, date.toISOString())
   })
 
-  if (lastDate) {
-    urls[0].lastmod = lastDate.toISOString()
-  }
+  urls[0].lastmod = lastDate.toISOString()
 
   res.setHeader('Content-Type', 'text/xml')
   res.write(createSitemap(urls))

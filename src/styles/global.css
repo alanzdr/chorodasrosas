@@ -1,91 +1,43 @@
-:root {
-  font-size: 60%;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-  --text-color: #333;
-  --title-color: #b40f20;
-  --title-color-on-dark: #fff;
-  --hover-color: #b40f20;
-  --background-color: #c9c9d1;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
+html,
+body {
+  @apply w-full h-full scroll-smooth;
 }
 
 body {
-  background: var(--background-color);
-  font-size: 100%;
-}
-
-body,
-input,
-button,
-textarea {
-  font: 300 1.6rem "Roboto", sans-serif;
-  -webkit-font-smoothing: antialiased !important;
-  color: var(--text-color);
-}
-
-picture {
-  display: contents;
-}
-
-picture source {
-  display: none;
-}
-
-ul {
-  list-style: none;
-}
-
-a {
-  text-decoration: none;
-  color: var(--text-color);
-}
-
-a:hover {
-  color: var(--hover-color);
-}
-
-p {
-  font-size: 1.6rem;
-  line-height: 2;
+  @apply text-gray-dark bg-gray-light;
 }
 
 h1,
 h2,
-h3 {
-  font-family: "Amatic SC", cursive;
-  line-height: 1;
+h3,
+h4 {
+  @apply font-bold font-amatic;
 }
 
-h1 {
-  font-size: 4.8rem;
-}
-
-h2 {
-  font-size: 4.8rem;
-}
-
-h3 {
-  font-size: 4rem;
-}
-
-@media (min-width: 1000px) {
-  :root {
-    font-size: 62.5%;
+@layer components {
+  .container {
+    @apply w-11/12 max-w-[75rem] mx-auto;
   }
 }
 
-@media (min-width: 1400px) {
-  :root {
-    font-size: 65%;
+@layer utilities {
+  .transition-transform,
+  .transition-opacity,
+  .transition-colors,
+  .transition-all {
+    @apply duration-500 ease-out;
+  }
+
+  .transition-scroll-hidden {
+    @apply opacity-0 translate-y-16;
+  }
+
+  .transition-scroll-showing {
+    @apply transition-[opacity,transform] duration-1000;
+    transition-timing-function: cubic-bezier(0, 0, 0.4, 1);
   }
 }

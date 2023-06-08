@@ -1,22 +1,21 @@
 import React from 'react'
 import Link from 'next/link'
 
-import styled from 'styles/footer.module.css'
-
 interface Props {
-  single: boolean
+  single?: boolean
 }
 
 const Footer: React.FC<Props> = ({ single }) => {
   return (
-    <footer className={styled.footer}>
-      <div className={styled.contact}>
-        <h3>Contato</h3>
-        <div className={styled.contactList}>
+    <footer className="py-20">
+      <div className="flex flex-col items-center">
+        <h2 className='text-red text-center text-5xl'>Contato</h2>
+        <div className="mt-10 flex flex-col gap-4">
           <a
             href="https://www.instagram.com/chorodasrosas"
             target="_blank"
             rel="noopener noreferrer"
+            className='flex items-center gap-4 transition-colors hover:text-red'
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -38,6 +37,7 @@ const Footer: React.FC<Props> = ({ single }) => {
             href="mailto:alandersonzelindrodr@gmail.com"
             target="_blank"
             rel="noopener noreferrer"
+            className='flex items-center gap-4 transition-colors hover:text-red'
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -59,6 +59,7 @@ const Footer: React.FC<Props> = ({ single }) => {
             href="https://github.com/alanzdr"
             target="_blank"
             rel="noopener noreferrer"
+            className='flex items-center gap-4 transition-colors hover:text-red'
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -77,21 +78,25 @@ const Footer: React.FC<Props> = ({ single }) => {
           </a>
         </div>
       </div>
-      <Link href="/" className={`${styled.back} ${single ? styled.single : ''}` }>
-        <p>VOLTAR</p>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="32"
-          height="32"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="1"
-          strokeLinecap="round"
-          strokeLinejoin="round">
-          <polyline points="6 9 12 15 18 9"></polyline>
-        </svg>
-      </Link>
+      {single && (
+        <Link href="/" className="flex flex-row items-center gap-1 mx-auto mt-10 w-fit cursor-pointer transition-colors hover:text-red">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="32"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className='rotate-90'
+          >
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+          <p>VOLTAR</p>
+        </Link>
+      )}
     </footer>
   )
 }

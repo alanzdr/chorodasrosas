@@ -1,23 +1,21 @@
 import matter from 'gray-matter'
 import { marked } from 'marked'
+import { IPost } from 'types/posts'
 
-export interface IPost {
-  title: string,
-  thumb: string,
-  slug: string,
-  date: string,
-  content?: string,
-}
+marked.use({
+  headerIds: false,
+  mangle: false
+})
 
 export async function getAllPosts () : Promise<IPost[]> {
-  const context = require.context('../../data', false, /\.md$/)
+  const context = require.context('../data', false, /\.md$/)
   const posts : IPost[] = []
 
   for (const key of context.keys()) {
     // console.log(key.slice(0, 4))
     if (key.slice(0, 4) !== 'data') {
       const post = key.slice(2)
-      const content = await import(`../../data/${post}`)
+      const content = await import(`../data/${post}`)
       const meta = matter(content.default)
 
       posts.push({
@@ -29,14 +27,22 @@ export async function getAllPosts () : Promise<IPost[]> {
     }
   }
 
-  return posts
+  return posts.sort((a, b) => {
+    if (a.date < b.date) {
+      return 1
+    }
+    if (a.date > b.date) {
+      return -1
+    }
+    return 0
+  })
 }
 
 export async function getPostBySlug (slug: string) : Promise<IPost> {
-  const fileContent = await import(`../../data/${slug}.md`)
+  const fileContent = await import(`../data/${slug}.md`)
 
   const meta = matter(fileContent.default)
-  const content = marked(meta.content)
+  const content = marked.parse(meta.content)
 
   return {
     title: meta.data.title,
