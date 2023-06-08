@@ -2,6 +2,7 @@
 title: "Lua"
 thumb: "https://images.pexels.com/photos/748626/pexels-photo-748626.jpeg"
 date: "2021-12-07"
+tags: "romântico"
 ---
 Ohh lua, minha lua,  
 Meus motivos de viver;  

@@ -2,6 +2,7 @@
 title: "Me beije"
 thumb: "https://images.pexels.com/photos/3693878/pexels-photo-3693878.jpeg"
 date: "2016-12-23"
+tags: "romântico,sensual"
 ---
 Me engula, me cuspa  
 Me faça em dois  

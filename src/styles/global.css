@@ -20,7 +20,7 @@ h4 {
 
 @layer components {
   .container {
-    @apply w-11/12 max-w-[75rem] mx-auto;
+    @apply w-[90%] max-w-[75rem] mx-auto;
   }
 }
 

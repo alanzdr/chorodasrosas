@@ -2,6 +2,7 @@
 title: "Vênus"
 thumb: "https://images.pexels.com/photos/194040/pexels-photo-194040.jpeg"
 date: "2020-10-26"
+tags: "romântico"
 ---
 Simples flor,  
 Pura, porém inquieta;  

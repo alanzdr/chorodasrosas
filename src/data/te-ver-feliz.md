@@ -2,6 +2,7 @@
 title: "Te ver feliz"
 thumb: 'https://images.pexels.com/photos/16948947/pexels-photo-16948947/free-photo-of-happy-couple-hugging-walking-on-city-street.jpeg'
 date: "2023-06-03"
+tags: "romântico,triste"
 ---
 O quão difícil é pra você enxergar,  
 O quanto de mim há em você;  

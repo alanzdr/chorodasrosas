@@ -2,6 +2,7 @@
 title: "Meu Fetiche"
 thumb: 'https://images.pexels.com/photos/1157936/pexels-photo-1157936.jpeg'
 date: "2021-03-29"
+tags: "sensual"
 ---
 Segunda é na cozinha,  
 De quatro sobre a mesa;  

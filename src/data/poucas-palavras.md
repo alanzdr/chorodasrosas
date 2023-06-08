@@ -2,6 +2,7 @@
 title: "Poucas Palavras"
 thumb: "https://images.pexels.com/photos/3780003/pexels-photo-3780003.jpeg"
 date: "2015-02-08"
+tags: "reflexivo"
 ---
 Um dia pensei em fazer um poema,  
 Apenas um poema eu não fiz.  

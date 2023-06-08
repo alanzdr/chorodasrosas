@@ -2,6 +2,7 @@
 title: "Poesia é idiota"
 thumb: 'https://images.pexels.com/photos/7034134/pexels-photo-7034134.jpeg'
 date: "2023-05-16"
+tags: "romântico"
 ---
 Poesia é idiota,  
 O que mais poderia ser;  

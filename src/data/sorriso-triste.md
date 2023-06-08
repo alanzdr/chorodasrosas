@@ -2,6 +2,7 @@
 title: "Sorriso triste"
 thumb: "https://images.pexels.com/photos/5293987/pexels-photo-5293987.jpeg"
 date: "2016-09-03"
+tags: "romântico"
 ---
 Você me apareceu com um sorriso triste,  
 me falou de um mundo que não existe;  

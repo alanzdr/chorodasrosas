@@ -2,6 +2,7 @@
 title: "Tempo"
 thumb: "https://images.pexels.com/photos/745365/pexels-photo-745365.jpeg"
 date: "2016-01-30"
+tags: "triste"
 ---
 Quanto tempo faz  
 Eu já nem conto mais  

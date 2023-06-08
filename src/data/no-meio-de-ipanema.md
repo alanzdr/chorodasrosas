@@ -2,6 +2,7 @@
 title: "No meio de Ipanema"
 thumb: "https://images.pexels.com/photos/2486169/pexels-photo-2486169.jpeg"
 date: "2021-02-12"
+tags: "romântico"
 ---
 Me perdi no teu sorriso,  
 No meio de Ipanema;  

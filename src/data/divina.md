@@ -2,6 +2,7 @@
 title: "Divina"
 thumb: 'https://images.pexels.com/photos/6710722/pexels-photo-6710722.jpeg'
 date: "2023-01-26"
+tags: "romântico"
 ---
 Conheci uma mulher,  
 Com nome de Divina;  

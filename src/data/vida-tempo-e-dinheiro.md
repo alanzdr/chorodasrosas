@@ -2,6 +2,7 @@
 title: "Vida, Tempo e Dinheiro"
 thumb: "https://images.pexels.com/photos/69096/pexels-photo-69096.jpeg"
 date: "2021-01-14"
+tags: "reflexivo"
 ---
 Por três vezes bati a porta,  
 E por três vezes respondi;  

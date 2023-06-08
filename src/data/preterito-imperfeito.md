@@ -2,8 +2,8 @@
 title: "Pretérito imperfeito"
 thumb: "https://images.pexels.com/photos/2877338/pexels-photo-2877338.jpeg"
 date: "2014-05-19"
+tags: "romântico,triste"
 ---
-
 Eis o sujeito do passado presente,  
 e do futuro imperfeito;  
 sei que estive ausente,  

@@ -2,6 +2,7 @@
 title: "Senhorita"
 thumb: "https://images.pexels.com/photos/2255880/pexels-photo-2255880.jpeg"
 date: "2021-06-08"
+tags: "romântico"
 ---
 Seus olhos verdes,   
 Eles não enxergam;  

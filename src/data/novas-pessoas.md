@@ -2,6 +2,7 @@
 title: "Novas Pessoas"
 thumb: "https://images.pexels.com/photos/326650/pexels-photo-326650.jpeg"
 date: "2023-01-04"
+tags: "romântico,triste"
 ---
 Amor, sempre quis te dizer,  
 O que nunca consegui;  

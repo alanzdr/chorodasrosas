@@ -2,6 +2,7 @@
 title: "Lagrimas no espelho"
 thumb: "https://images.pexels.com/photos/2282000/pexels-photo-2282000.jpeg"
 date: "2019-12-03"
+tags: "triste"
 ---
 Vivi muito mais que mereci,  
 Entre o abismo e a miséria,  

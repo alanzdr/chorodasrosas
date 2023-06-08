@@ -2,8 +2,8 @@
 title: "Não Mais"
 thumb: 'https://images.pexels.com/photos/2865901/pexels-photo-2865901.jpeg'
 date: "2011-10-08"
+tags: "romântico,triste"
 ---
-
 como a brisa suave do vento  
 suas palavras passaram rapidamente  
 como seus pensamentos  

@@ -2,6 +2,7 @@
 title: "Soberba Paixão"
 thumb: "https://images.pexels.com/photos/1600128/pexels-photo-1600128.jpeg"
 date: "2021-05-10"
+tags: "romântico,sensual"
 ---
 Quem somos nós pra dizer,  
 Nós vivemos, nós sentimos;  

@@ -2,6 +2,7 @@
 title: "Sorriso afortunado"
 thumb: 'https://images.pexels.com/photos/2935956/pexels-photo-2935956.jpeg'
 date: "2023-05-24"
+tags: "romântico,triste"
 ---
 Esses dias me peguei sorrindo sozinho,  
 Ouvindo novamente sua mensagem de voz;  

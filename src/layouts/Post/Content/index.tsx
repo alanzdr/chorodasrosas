@@ -1,3 +1,7 @@
+'use client'
+
+import classNames from 'classnames'
+import useScrollAnimation from 'hooks/use-scroll-animation'
 import React from 'react'
 
 interface Props {
@@ -6,12 +10,14 @@ interface Props {
 }
 
 const Content: React.FC<Props> = ({ title, content }) => {
+  const { animate, scrollAnimationRef } = useScrollAnimation()
+
   return (
-    <main className="container pt-12 flex flex-col items-center justify-center text-center">
-      <h1 className="text-6xl text-red">{title}</h1>
+    <main ref={scrollAnimationRef as any} className="container pt-12 flex flex-col items-center justify-center text-center">
+      <h1 className={classNames('text-6xl text-red', animate())}>{title}</h1>
       {content && (
         <div
-          className="mt-10 text-base md:text-lg"
+          className={classNames('mt-10 text-base md:text-lg', animate(1))}
           dangerouslySetInnerHTML={{
             __html: content
           }}

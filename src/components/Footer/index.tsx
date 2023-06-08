@@ -1,21 +1,27 @@
+'use client'
+
 import React from 'react'
 import Link from 'next/link'
+import useScrollAnimation from 'hooks/use-scroll-animation'
+import classNames from 'classnames'
 
 interface Props {
   single?: boolean
 }
 
 const Footer: React.FC<Props> = ({ single }) => {
+  const { animate, scrollAnimationRef } = useScrollAnimation()
+
   return (
-    <footer className="py-20">
+    <footer ref={scrollAnimationRef as any} className="py-20">
       <div className="flex flex-col items-center">
-        <h2 className='text-red text-center text-5xl'>Contato</h2>
+        <h2 className={classNames('text-red text-center text-5xl', animate())}>Contato</h2>
         <div className="mt-10 flex flex-col gap-4">
           <a
             href="https://www.instagram.com/chorodasrosas"
             target="_blank"
             rel="noopener noreferrer"
-            className='flex items-center gap-4 transition-colors hover:text-red'
+            className={classNames('flex items-center gap-4 transition-colors hover:text-red', animate(1))}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -37,7 +43,7 @@ const Footer: React.FC<Props> = ({ single }) => {
             href="mailto:alandersonzelindrodr@gmail.com"
             target="_blank"
             rel="noopener noreferrer"
-            className='flex items-center gap-4 transition-colors hover:text-red'
+            className={classNames('flex items-center gap-4 transition-colors hover:text-red', animate(2))}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -59,7 +65,7 @@ const Footer: React.FC<Props> = ({ single }) => {
             href="https://github.com/alanzdr"
             target="_blank"
             rel="noopener noreferrer"
-            className='flex items-center gap-4 transition-colors hover:text-red'
+            className={classNames('flex items-center gap-4 transition-colors hover:text-red', animate(3))}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -79,7 +85,7 @@ const Footer: React.FC<Props> = ({ single }) => {
         </div>
       </div>
       {single && (
-        <Link href="/" className="flex flex-row items-center gap-1 mx-auto mt-10 w-fit cursor-pointer transition-colors hover:text-red">
+        <Link href="/" className={classNames('flex flex-row items-center gap-1 mx-auto mt-10 w-fit cursor-pointer transition-colors hover:text-red', animate(4))}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="32"

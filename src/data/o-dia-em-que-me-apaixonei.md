@@ -2,6 +2,7 @@
 title: "O dia em que me apaixonei"
 thumb: "https://images.pexels.com/photos/3826670/pexels-photo-3826670.jpeg"
 date: "2022-03-09"
+tags: "romântico"
 ---
 O dia em que me apaixonei,  
 Foi quando finalmente percebi;  

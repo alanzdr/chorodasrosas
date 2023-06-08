@@ -2,6 +2,7 @@
 title: "Ecos de um universo"
 thumb: "https://images.pexels.com/photos/3262249/pexels-photo-3262249.jpeg"
 date: "2021-09-13"
+tags: "reflexivo"
 ---
 O último homem da terra,  
 O último ser do espaço;  

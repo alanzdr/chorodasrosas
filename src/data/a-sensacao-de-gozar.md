@@ -2,6 +2,7 @@
 title: "A sensação de Gozar"
 thumb: "https://images.pexels.com/photos/1450155/pexels-photo-1450155.jpeg"
 date: "2021-01-13"
+tags: "sensual"
 ---
 As bocas se encostam,  
 Sentimos o gosto do beijo;  

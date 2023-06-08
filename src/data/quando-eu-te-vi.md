@@ -2,6 +2,7 @@
 title: "Quando eu te vi"
 thumb: "https://images.pexels.com/photos/946727/pexels-photo-946727.jpeg"
 date: "2014-10-11"
+tags: "romântico"
 ---
 Quando eu te vi, eu pensei, desacreditei,  
 De tudo que eu tinha em mente, pouco eu falei,  

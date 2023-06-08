@@ -17,11 +17,14 @@ export async function getAllPosts () : Promise<IPost[]> {
       const post = key.slice(2)
       const content = await import(`../data/${post}`)
       const meta = matter(content.default)
+      const tags = (meta.data.tags?.split(',') || [] as string[])
+        .map((tag) => tag.charAt(0).toUpperCase() + tag.slice(1).toLowerCase())
 
       posts.push({
         slug: post.replace('.md', ''),
         title: meta.data.title,
         thumb: meta.data.thumb,
+        tags,
         date: meta.data.date
       } as IPost)
     }
@@ -43,11 +46,14 @@ export async function getPostBySlug (slug: string) : Promise<IPost> {
 
   const meta = matter(fileContent.default)
   const content = marked.parse(meta.content)
+  const tags = (meta.data.tags?.split(',') || [] as string[])
+    .map((tag) => tag.charAt(0).toUpperCase() + tag.slice(1).toLowerCase())
 
   return {
     title: meta.data.title,
     thumb: meta.data.thumb,
     date: meta.data.date,
+    tags,
     content,
     slug
   }

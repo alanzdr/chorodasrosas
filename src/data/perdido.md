@@ -2,6 +2,7 @@
 title: "Perdido"
 thumb: "https://images.pexels.com/photos/799420/pexels-photo-799420.jpeg"
 date: "2021-10-15"
+tags: "romântico"
 ---
 Eu me rendi, perdi,  
 Não há como ganhar;  

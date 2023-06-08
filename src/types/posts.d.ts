@@ -3,6 +3,7 @@ declare module 'types/posts' {
     title: string,
     thumb: string,
     slug: string,
+    tags: string[],
     date: string,
     content?: string,
   }

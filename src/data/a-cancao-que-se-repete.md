@@ -2,6 +2,7 @@
 title: "A canção que se repete"
 thumb: 'https://images.pexels.com/photos/374777/pexels-photo-374777.jpeg'
 date: "2021-01-12"
+tags: "triste"
 ---
 Acorda, escova dos dentes,  
 É hora de trabalhar;  

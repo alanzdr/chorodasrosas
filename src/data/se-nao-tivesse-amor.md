@@ -2,6 +2,7 @@
 title: "Se não tivesse amor"
 thumb: "https://images.pexels.com/photos/1535244/pexels-photo-1535244.jpeg"
 date: "2014-06-13"
+tags: "reflexivo"
 ---
 Se todos os ventos soprassem em minha direção,  
 ou se o mar se abrisse com meu furor,  

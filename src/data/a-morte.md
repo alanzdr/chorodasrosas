@@ -2,6 +2,7 @@
 title: "A Morte"
 thumb: "https://images.pexels.com/photos/143580/pexels-photo-143580.jpeg"
 date: "2021-02-26"
+tags: "triste,morte"
 ---
 A morte um dia me questionou,  
 Sim, a morte, foi quem me perguntou;  

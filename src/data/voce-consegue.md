@@ -2,6 +2,7 @@
 title: "Você consegue?"
 thumb: "https://images.pexels.com/photos/532358/pexels-photo-532358.jpeg"
 date: "2017-11-25"
+tags: "triste,morte"
 ---
 Você consegue sentir minha presença,  
 por mais que eu já esteja morto por dentro,  

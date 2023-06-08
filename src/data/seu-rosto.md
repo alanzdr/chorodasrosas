@@ -2,6 +2,7 @@
 title: "Seu rosto"
 thumb: "https://images.pexels.com/photos/2600348/pexels-photo-2600348.jpeg"
 date: "2015-11-25"
+tags: "romântico"
 ---
 Entre todas as mulheres do mundo  
 quem há de se comparar a ela?  

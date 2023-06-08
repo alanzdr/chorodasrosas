@@ -2,6 +2,7 @@
 title: "Pensando em Você"
 thumb: 'https://images.pexels.com/photos/7278779/pexels-photo-7278779.jpeg'
 date: "2023-02-22"
+tags: "romântico"
 ---
 Você mexeu com meus sentimentos,  
 Mudou meus motivos de viver;  

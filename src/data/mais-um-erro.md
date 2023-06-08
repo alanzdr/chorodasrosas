@@ -2,6 +2,7 @@
 title: "Mais um erro"
 thumb: 'https://images.pexels.com/photos/374918/pexels-photo-374918.jpeg'
 date: "2021-01-04"
+tags: "romântico,triste"
 ---
 Era uma história,  
 Uma história de amargar;  

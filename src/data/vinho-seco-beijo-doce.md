@@ -2,6 +2,7 @@
 title: "Vinho seco, beijo doce."
 thumb: 'https://images.pexels.com/photos/6289/lights-night-alcohol-party.jpg'
 date: "2021-07-30"
+tags: "romântico,sensual"
 ---
 Minha taça está cheia,  
 Minha mente vazia;  

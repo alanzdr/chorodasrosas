@@ -2,6 +2,7 @@
 title: "Vermelho"
 thumb: "https://images.pexels.com/photos/1161931/pexels-photo-1161931.jpeg"
 date: "2015-12-09"
+tags: "romântico"
 ---
 Ao vermelho de todas as rosas  
 Ao choro de sangue refletido no espelho  

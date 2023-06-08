@@ -2,6 +2,7 @@
 title: "Cigarro"
 thumb: "https://images.pexels.com/photos/405082/pexels-photo-405082.jpeg"
 date: "2021-03-11"
+tags: "triste"
 ---
 Mais uma vez estou aqui,  
 Tentando não chorar;  

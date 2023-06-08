@@ -2,6 +2,7 @@
 title: "Escura sensação"
 thumb: 'https://images.pexels.com/photos/3856635/pexels-photo-3856635.jpeg'
 date: "2021-12-27"
+tags: "triste"
 ---
 Seus pensamentos são obras,  
 de sua própria miséria;  

@@ -2,6 +2,7 @@
 title: "Poderia ser"
 thumb: "https://images.pexels.com/photos/1077469/pexels-photo-1077469.jpeg"
 date: "2023-05-07"
+tags: "romântico,triste"
 ---
 Poderia ser dezembro,  
 Véspera de Natal;  

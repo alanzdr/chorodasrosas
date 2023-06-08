@@ -2,6 +2,7 @@
 title: "Gata"
 thumb: "https://images.pexels.com/photos/37337/cat-silhouette-cats-silhouette-cat-s-eyes.jpg"
 date: "2021-04-07"
+tags: "romântico"
 ---
 Gata, não leve tudo tão a sério,  
 O mundo será um lugar pequeno;  
