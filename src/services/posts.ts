@@ -20,10 +20,12 @@ export async function getAllPosts () : Promise<IPost[]> {
       const tags = (meta.data.tags?.split(',') || [] as string[])
         .map((tag) => tag.charAt(0).toUpperCase() + tag.slice(1).toLowerCase())
 
+      const thumb = meta.data.thumb
+
       posts.push({
         slug: post.replace('.md', ''),
         title: meta.data.title,
-        thumb: meta.data.thumb,
+        thumb,
         tags,
         date: meta.data.date
       } as IPost)
@@ -41,6 +43,21 @@ export async function getAllPosts () : Promise<IPost[]> {
   })
 }
 
+export async function getPostsSlugs () : Promise<string[]> {
+  const context = require.context('../data', false, /\.md$/)
+  const slugs : string[] = []
+
+  for (const key of context.keys()) {
+    // console.log(key.slice(0, 4))
+    if (key.slice(0, 4) !== 'data') {
+      const post = key.slice(2)
+      slugs.push(post.replace('.md', ''))
+    }
+  }
+
+  return slugs
+}
+
 export async function getPostBySlug (slug: string) : Promise<IPost> {
   const fileContent = await import(`../data/${slug}.md`)
 
@@ -49,12 +66,38 @@ export async function getPostBySlug (slug: string) : Promise<IPost> {
   const tags = (meta.data.tags?.split(',') || [] as string[])
     .map((tag) => tag.charAt(0).toUpperCase() + tag.slice(1).toLowerCase())
 
+  const thumb = meta.data.thumb
+
   return {
     title: meta.data.title,
-    thumb: meta.data.thumb,
+    thumb,
     date: meta.data.date,
     tags,
     content,
     slug
   }
+}
+
+export async function getRelatedsPosts (post: IPost) : Promise<IPost[]> {
+  const { slug, tags } = post
+
+  const posts = await getAllPosts()
+
+  const shufflePosts = posts
+    .filter(post => post.slug !== slug)
+    .sort(() => Math.random() - 0.5)
+
+  const relateds: IPost[] = []
+  const notRelateds: IPost[] = []
+
+  shufflePosts.forEach((post) => {
+    const relatedsTags = post.tags.filter((tag) => tags.includes(tag))
+    if (relatedsTags.length > 0) {
+      relateds.push(post)
+    } else {
+      notRelateds.push(post)
+    }
+  })
+
+  return [...relateds.slice(0, 3), ...notRelateds].slice(0, 6)
 }

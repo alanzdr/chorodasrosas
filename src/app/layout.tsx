@@ -49,6 +49,8 @@ export default function RootLayout ({
           sizes="16x16"
           href="/favicon-16x16.png"
         />
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:image" content="https://chorodasrosas.com/thumbnail.png" />
         <meta property="og:locale" content="pt_BR" />
         <meta property="og:site_name" content="Choro das Rosas" />
         <meta property="og:image" content="https://chorodasrosas.com/thumbnail.png" />

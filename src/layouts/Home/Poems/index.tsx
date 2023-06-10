@@ -2,7 +2,7 @@
 
 import React, { useMemo, useState } from 'react'
 
-import Article from './article'
+import Article from 'components/Article'
 import { IPost } from 'types/posts'
 import Select from 'components/Select'
 import useScrollAnimation from 'hooks/use-scroll-animation'
@@ -38,15 +38,15 @@ const Poems: React.FC<Props> = ({ posts }) => {
   }, [posts, selectedTag])
 
   return (
-    <section ref={scrollAnimationRef as any} id="poemas" className="py-20 container">
+    <section ref={scrollAnimationRef as any} id="poemas" className="my-10 md:my-20 container">
       <div className={classNames('flex items-end justify-between', animate())}>
-        <h2 className='text-red text-5xl md:text-7xl'>Poemas</h2>
+        <h2 className='text-red text-5xl md:text-6xl'>Poemas</h2>
         <Select
           values={postsTags}
           name="tags"
           label="Filtro por Tags:"
-          containerClassName='text-right md:text-left max-w-[8rem] md:max-w-[16.25rem]'
-          placeholder='Tags'
+          containerClassName='text-right md:text-left max-w-[11rem] md:max-w-[16.25rem]'
+          placeholder='Todas as Tags'
           value={selectedTag}
           onChange={(e) => setSelectedTag(e.target.value)}
         />

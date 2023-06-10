@@ -26,7 +26,7 @@ const EmptyComponent = () => {
 }
 
 export const getServerSideProps : GetServerSideProps = async ({ res }) => {
-  const baseSiteUrl = 'http://chorodasrosas.com'
+  const baseSiteUrl = 'https://www.chorodasrosas.com'
 
   const urls: SitemapUrl[] = [
     { url: baseSiteUrl, lastmod: new Date().toISOString() }

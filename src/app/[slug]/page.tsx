@@ -2,7 +2,8 @@ import React from 'react'
 import { Metadata } from 'next'
 
 import PostLayout from 'layouts/Post'
-import { getAllPosts, getPostBySlug } from 'services/posts'
+import { getPostsSlugs, getPostBySlug, getRelatedsPosts } from 'services/posts'
+import { getMetadata } from 'utils/seo'
 
 interface Props {
   params: {
@@ -12,28 +13,30 @@ interface Props {
 
 const Page = async ({ params }: Props) => {
   const data = await getPostBySlug(params.slug)
+  const relateds = await getRelatedsPosts(data)
 
-  return <PostLayout data={data}/>
+  return <PostLayout data={data} relateds={relateds} />
 }
 
 export async function generateMetadata (
   { params }: Props
 ): Promise<Metadata> {
   const data = await getPostBySlug(params.slug)
-  const description = `Leia o poema ${data.title} e outros, esse é meu atelier de poemas online, fique à vontade`
+  const description = `Clique para ler o poema '${data.title}' e outros, esse é meu atelier online de poemas, fique à vontade`
 
-  return {
+  return getMetadata({
     title: `${data.title} - Poema | Choro das Rosas`,
-    description
-  }
+    description,
+    url: `https://chorodasrosas.com/${params.slug}`
+  })
 }
 
 export async function generateStaticParams () {
-  const posts = await getAllPosts()
+  const slugs = await getPostsSlugs()
 
-  return posts.map(post => {
+  return slugs.map(slug => {
     return {
-      slug: post.slug
+      slug
     }
   })
 }

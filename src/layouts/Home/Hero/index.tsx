@@ -34,7 +34,7 @@ const Hero: React.FC = () => {
 
         </div>
       </div>
-      <a href="#poemas" className={classNames('flex flex-col items-center justify-center absolute z-10 bottom-10 md:bottom-4 left-1/2 -translate-x-1/2 text-white font-bold transition-opacity hover:opacity-75', animate(2))}>
+      <a href="#poemas" className={classNames('flex flex-col items-center justify-center absolute z-10 bottom-20 md:bottom-4 left-1/2 -translate-x-1/2 text-white font-bold transition-opacity hover:opacity-75', animate(2))}>
         <p>POEMAS</p>
         <svg
           xmlns="http://www.w3.org/2000/svg"
