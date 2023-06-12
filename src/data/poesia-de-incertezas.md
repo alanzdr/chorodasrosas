@@ -1,7 +1,7 @@
 ---
 title: "Poesia de Incertezas"
 thumb: 'https://images.pexels.com/photos/17042219/pexels-photo-17042219/free-photo-of-back-view-of-a-brunette-walking-in-a-dry-grass-field.jpeg'
-date: "2021-01-12"
+date: "2023-06-12"
 tags: "romântico"
 ---
 Ela é mar, ela é vida,  
