@@ -78,8 +78,8 @@ export async function getPostBySlug (slug: string) : Promise<IPost> {
   }
 }
 
-export async function getRelatedsPosts (post: IPost) : Promise<IPost[]> {
-  const { slug, tags } = post
+export async function getRelatedsPosts (relatedToPost: IPost) : Promise<IPost[]> {
+  const { slug, tags } = relatedToPost
 
   const posts = await getAllPosts()
 
@@ -87,12 +87,12 @@ export async function getRelatedsPosts (post: IPost) : Promise<IPost[]> {
     .filter(post => post.slug !== slug)
     .sort(() => Math.random() - 0.5)
 
-  const relateds: IPost[] = []
+  const relateds: IPost[] = shufflePosts.filter((post) => post.tags[0] === tags[0])
   const notRelateds: IPost[] = []
 
   shufflePosts.forEach((post) => {
     const relatedsTags = post.tags.filter((tag) => tags.includes(tag))
-    if (relatedsTags.length > 0) {
+    if (relatedsTags.length > 0 && !relateds.includes(post)) {
       relateds.push(post)
     } else {
       notRelateds.push(post)
