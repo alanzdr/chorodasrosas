@@ -2,7 +2,7 @@
 title: "A Rua"
 thumb: "https://images.pexels.com/photos/9388154/pexels-photo-9388154.jpeg"
 date: "2022-04-11"
-tags: "triste,morte"
+tags: "caronte,triste,morte"
 ---
 A rua, está cada vez mais escura e fria,  
 Como de costume, ventava enquanto chovia;  
