@@ -91,8 +91,11 @@ export async function getRelatedsPosts (relatedToPost: IPost) : Promise<IPost[]>
   const notRelateds: IPost[] = []
 
   shufflePosts.forEach((post) => {
+    if (relateds.includes(post)) {
+      return
+    }
     const relatedsTags = post.tags.filter((tag) => tags.includes(tag))
-    if (relatedsTags.length > 0 && !relateds.includes(post)) {
+    if (relatedsTags.length > 0) {
       relateds.push(post)
     } else {
       notRelateds.push(post)
