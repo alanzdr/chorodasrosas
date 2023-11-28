@@ -18,6 +18,19 @@ h4 {
   @apply font-bold font-amatic;
 }
 
+.post {
+  @apply transition-[opacity,filter] duration-300 ease-out;
+}
+
+.post.show {
+  order: 0;
+}
+
+.post.hide {
+  order: 1;
+  @apply opacity-75 grayscale;
+}
+
 @layer components {
   .container {
     @apply w-[90%] max-w-[75rem] mx-auto;
@@ -32,11 +45,16 @@ h4 {
     @apply duration-500 ease-out;
   }
 
-  .transition-scroll-hidden {
+  .animation-content {
     @apply opacity-0 translate-y-16;
   }
 
-  .transition-scroll-showing {
+  .animation-content.opacity-only {
+    @apply !transform-none;
+  }
+
+  .animation-visible .animation-content {
+    @apply opacity-100 transform-none;
     @apply transition-[opacity,transform] duration-1000;
     transition-timing-function: cubic-bezier(0, 0, 0.4, 1);
   }

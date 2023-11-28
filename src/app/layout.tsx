@@ -5,6 +5,8 @@ import classNames from 'classnames'
 import { Roboto, Amatic_SC } from 'next/font/google'
 
 import 'styles/global.css'
+import { Metadata } from 'next'
+import { getMetadata } from 'utils/seo'
 
 const amaticSC = Amatic_SC({
   weight: '700',
@@ -18,6 +20,17 @@ const roboto = Roboto({
   variable: '--font-roboto'
 })
 
+export async function generateViewport () {
+  return {
+    themeColor: '#b40f20'
+  }
+}
+
+export const metadata: Metadata = getMetadata({
+  title: 'Choro das Rosas - Atelier de Poemas',
+  description: 'A pagina nasceu com objetivo de ficar como um atelier online e manter meus poemas para que outras pessoas possam ver e talvez sentir um pouco do que eu estava sentindo quando escrevi.'
+})
+
 export default function RootLayout ({
   children
 }: {
@@ -25,41 +38,12 @@ export default function RootLayout ({
 }) {
   return (
     <html lang="pt-BR">
-      <head>
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="96x96"
-          href="/favicon-96x96.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="32x32"
-          href="/favicon-32x32.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="16x16"
-          href="/favicon-16x16.png"
-        />
-        <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:image" content="https://chorodasrosas.com/thumbnail.png" />
-        <meta property="og:locale" content="pt_BR" />
-        <meta property="og:site_name" content="Choro das Rosas" />
-        <meta property="og:image" content="https://chorodasrosas.com/thumbnail.png" />
-        <meta property="og:image:type" content="image/png" />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-        <meta property="og:type" content="article" />
-        <meta name="author" content="Alanderson Zelindro da Rosa" />
-        <meta name="keywords" content="Poema" />
-      </head>
+      <head />
       <body className={classNames(amaticSC.variable, roboto.variable, 'relative font-roboto')}>
         {children}
         <Script
           async
+          defer
           src="https://www.googletagmanager.com/gtag/js?id=G-X6CQH7YMH7"
         />
         <Script id="google-tag-manager" strategy="afterInteractive">

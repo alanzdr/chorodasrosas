@@ -27,7 +27,7 @@ export async function generateMetadata (
   return getMetadata({
     title: `${data.title} - Poema | Choro das Rosas`,
     description,
-    url: `https://chorodasrosas.com/${params.slug}`
+    url: `/${params.slug}`
   })
 }
 

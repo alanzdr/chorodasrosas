@@ -2,11 +2,6 @@ import matter from 'gray-matter'
 import { marked } from 'marked'
 import { IPost } from 'types/posts'
 
-marked.use({
-  headerIds: false,
-  mangle: false
-})
-
 export async function getAllPosts () : Promise<IPost[]> {
   const context = require.context('../data', false, /\.md$/)
   const posts : IPost[] = []

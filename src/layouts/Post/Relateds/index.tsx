@@ -1,20 +1,17 @@
-'use client'
-
 import classNames from 'classnames'
+import AnimatedSection from 'components/AnimatedSection'
 import Article from 'components/Article'
-import useScrollAnimation from 'hooks/use-scroll-animation'
 import React from 'react'
 import { IPost } from 'types/posts'
+import { animate } from 'utils/animation'
 
 interface Props {
   posts: IPost[]
 }
 
 const Relateds: React.FC<Props> = ({ posts }) => {
-  const { animate, scrollAnimationRef } = useScrollAnimation()
-
   return (
-    <section ref={scrollAnimationRef as any} className='container my-10 md:my-20'>
+    <AnimatedSection className='container my-10 md:my-20'>
       <div className={classNames('w-full text-center', animate())}>
         <h2 className='text-red text-5xl md:text-6xl'>Continue Lendo</h2>
       </div>
@@ -23,7 +20,7 @@ const Relateds: React.FC<Props> = ({ posts }) => {
           <Article key={item.slug} post={item} />
         ))}
       </main>
-    </section>
+    </AnimatedSection>
   )
 }
 

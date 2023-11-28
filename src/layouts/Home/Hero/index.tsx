@@ -1,16 +1,12 @@
-'use client'
-
 import React from 'react'
 import Image from 'next/image'
-import useScrollAnimation from 'hooks/use-scroll-animation'
 import classNames from 'classnames'
+import AnimatedSection from 'components/AnimatedSection'
+import { animate } from 'utils/animation'
 
 const Hero: React.FC = () => {
-  const { animate, scrollAnimationRef } = useScrollAnimation()
-
   return (
-    <section
-      ref={scrollAnimationRef as any}
+    <AnimatedSection
       className="relative w-full h-screen overflow-hidden"
     >
       <div className="absolute z-0 left-0 top-0 w-full h-full">
@@ -21,6 +17,8 @@ const Hero: React.FC = () => {
           height={933}
           width={1400}
           priority
+          loading='eager'
+          sizes='100vw'
         />
       </div>
       <div className="absolute top-8 left-0 w-full z-10">
@@ -31,26 +29,27 @@ const Hero: React.FC = () => {
             Rosas
           </h1>
           <p className={classNames('text-white mt-4', animate(1))}>Meu atelier pessoal<br />de poemas</p>
-
         </div>
       </div>
-      <a href="#poemas" className={classNames('flex flex-col items-center justify-center absolute z-10 bottom-20 md:bottom-4 left-1/2 -translate-x-1/2 text-white font-bold transition-opacity hover:opacity-75', animate(2))}>
-        <p>POEMAS</p>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <polyline points="6 9 12 15 18 9"></polyline>
-        </svg>
-      </a>
-    </section>
+      <div className={classNames('absolute z-10 bottom-20 md:bottom-4 left-1/2', animate(2))}>
+        <a href="#poemas" className='flex flex-col items-center justify-center text-white font-bold -translate-x-1/2 transition-opacity ease-out hover:opacity-75'>
+          <p>POEMAS</p>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </a>
+      </div>
+    </AnimatedSection>
   )
 }
 

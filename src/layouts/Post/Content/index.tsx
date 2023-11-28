@@ -1,8 +1,7 @@
-'use client'
-
 import classNames from 'classnames'
-import useScrollAnimation from 'hooks/use-scroll-animation'
+import AnimatedSection from 'components/AnimatedSection'
 import React from 'react'
+import { animate } from 'utils/animation'
 
 interface Props {
   title: string,
@@ -10,10 +9,8 @@ interface Props {
 }
 
 const Content: React.FC<Props> = ({ title, content }) => {
-  const { animate, scrollAnimationRef } = useScrollAnimation()
-
   return (
-    <main ref={scrollAnimationRef as any} className="container pt-12 flex flex-col items-center justify-center text-center">
+    <AnimatedSection Tag="main" className="container pt-12 flex flex-col items-center justify-center text-center">
       <h1 className={classNames('text-7xl text-red', animate())}>{title}</h1>
       {content && (
         <div
@@ -23,7 +20,7 @@ const Content: React.FC<Props> = ({ title, content }) => {
           }}
         />
       )}
-    </main>
+    </AnimatedSection>
   )
 }
 

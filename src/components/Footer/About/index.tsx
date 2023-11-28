@@ -1,17 +1,14 @@
-'use client'
-
 import React from 'react'
 import Image from 'next/image'
 
 import AboutImage from 'assets/about.png'
 import classNames from 'classnames'
-import useScrollAnimation from 'hooks/use-scroll-animation'
+import AnimatedSection from 'components/AnimatedSection'
+import { animate } from 'utils/animation'
 
 const About: React.FC = () => {
-  const { animate, scrollAnimationRef } = useScrollAnimation()
-
   return (
-    <div ref={scrollAnimationRef as any} className='container max-w-[50rem]'>
+    <AnimatedSection Tag="div" className='container max-w-[50rem]'>
       <div className='flex flex-col md:grid grid-cols-[5fr,6fr] gap-10'>
         <div className={classNames('flex items-center justify-end', animate())}>
           <Image
@@ -21,6 +18,7 @@ const About: React.FC = () => {
             quality={90}
             width={345}
             height={345}
+            sizes='100vw'
           />
         </div>
         <div className='flex flex-col items-center md:items-start text-center md:text-left justify-center gap-4'>
@@ -60,7 +58,7 @@ const About: React.FC = () => {
         </div>
 
       </div>
-    </div>
+    </AnimatedSection>
   )
 }
 

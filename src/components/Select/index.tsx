@@ -23,12 +23,13 @@ const Select: React.FC<Properties> = ({
     <div
       className={classNames('flex flex-col gap-0.5 w-full', containerClassName)}
     >
-      <label className="select-label text-sm" htmlFor={name}>
+      <label className="select-label text-sm" htmlFor={`select-${name}`} >
         {label}
         {required && '*'}
       </label>
       <div className="relative">
         <select
+          id={`select-${name}`}
           name={name}
           required={required}
           className={classNames('appearance-none w-full h-12 px-5 pb-px rounded-lg text-white placeholder:text-white bg-gray-dark border border-gray-dark !outline-0 focus:outline-none focus-visible:!outline-none focus:border transition-colors focus:!border-gray-light', className)}

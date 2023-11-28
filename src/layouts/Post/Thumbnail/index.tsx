@@ -17,6 +17,7 @@ const Thumbnail: React.FC<Props> = ({ data }) => {
         width={1400}
         className='w-full h-full object-cover object-[center,30%]'
         priority
+        sizes='100vw'
       />
     </div>
   )

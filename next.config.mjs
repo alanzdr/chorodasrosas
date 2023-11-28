@@ -1,6 +1,11 @@
 const config = {
   images: {
-    domains: ['images.pexels.com'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'images.pexels.com'
+      }
+    ],
     deviceSizes: [400, 768, 1024, 1280, 1400]
   },
   webpack: function (config) {
