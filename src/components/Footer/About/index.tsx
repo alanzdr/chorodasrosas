@@ -20,47 +20,44 @@ const About: React.FC = () => {
           />
         </div>
         <div className="flex flex-col items-center justify-center gap-4 text-center md:items-start md:text-left">
-          <div className={animate(1)}>
-            <h2 className="text-5xl text-red md:text-6xl">Sobre o Autor</h2>
-            <p className="font-amatic text-2xl">
-              - Alanderson Zelindro da Rosa
-            </p>
-          </div>
-          <div
-            className={animate(
-              2,
-              'flex max-w-[17.5rem] flex-col gap-2 text-sm md:max-w-full'
-            )}
-          >
-            <p>
-              Eu sempre gostei de escrever, desde a adolescência, mas por conta
-              do meu TDAH sempre tive dificuldade de terminar qualquer conto que
-              comecei.
-            </p>
-            <p>
-              Então, inspirado pelo meu irmão, resolvi começar a escrever
-              poemas, e descobri nessa forma de arte, uma maneira de me
-              expressar, e em poucas palavras falar o que eu preciso contar, ou
-              dos sentimentos que estão dentro de mim.
-            </p>
+          <h2 className={animate(1, 'text-4xl text-red md:text-5xl')}>
+            Sobre o Autor
+          </h2>
+          <div className={animate(2)}>
+            <h3 className="font-amatic text-2xl">
+              Alanderson Zelindro da Rosa
+            </h3>
+            <p className="text-sm font-bold">Desenvolvedor sênior</p>
           </div>
           <div
             className={animate(
               3,
+              'flex max-w-[17.5rem] flex-col gap-2 text-sm md:max-w-full'
+            )}
+          >
+            <p>
+              Eu sempre gostei de escrever, mas por conta do meu TDAH sempre
+              tive dificuldade de terminar qualquer conto que comecei, mas
+              descobri na poesia uma forma de me expressar, com menos linhas.
+            </p>
+          </div>
+          <div
+            className={animate(
+              4,
               'mt-4 flex flex-col items-center md:mt-0 md:items-start'
             )}
           >
-            <h3 className="text-3xl text-red">Siga-me</h3>
+            <h3 className="text-2xl text-red">Siga-me</h3>
             <a
               href="https://www.instagram.com/chorodasrosas"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-2 flex items-center gap-4 transition-colors hover:text-red"
+              className="mt-2 flex items-center gap-2 transition-colors hover:text-red"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="32"
-                height="32"
+                width="24"
+                height="24"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"

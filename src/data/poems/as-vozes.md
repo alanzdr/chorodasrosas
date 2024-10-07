@@ -3,6 +3,7 @@ title: "As Vozes"
 thumb: "https://images.pexels.com/photos/2935814/pexels-photo-2935814.jpeg"
 date: "2024-01-22"
 tags: "triste"
+music: "flSSubxB5_k"
 ---
 Me perdi no meio dessa confusão,  
 Já não sei mais onde estou;  

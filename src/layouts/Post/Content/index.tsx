@@ -16,7 +16,10 @@ const Content: React.FC<Props> = ({ title, content }) => {
       <h1 className={animate({ className: 'text-7xl text-red' })}>{title}</h1>
       {content && (
         <div
-          className={animate({ className: 'mt-10 text-base md:text-lg' })}
+          className={animate({
+            className: 'mt-10 text-base md:text-lg',
+            index: 1,
+          })}
           dangerouslySetInnerHTML={{
             __html: content,
           }}

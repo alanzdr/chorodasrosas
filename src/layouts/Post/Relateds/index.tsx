@@ -10,21 +10,25 @@ interface Props {
 
 const Relateds: React.FC<Props> = ({ posts }) => {
   return (
-    <AnimatedSection className="container my-10 md:my-20">
+    <AnimatedSection className="container my-16 md:my-24">
       <div className={animate({ className: 'w-full text-center' })}>
-        <h2 className="text-5xl text-red md:text-6xl">Continue Lendo</h2>
+        <h2 className="text-4xl text-red md:text-5xl">Continue Lendo</h2>
+
+        <p className="text-sm">
+          Leia outros poemas parecidos com este que você acabou de ler.
+        </p>
       </div>
-      <main
+      <div
         className={animate({
           className:
-            'mt-10 grid w-full gap-6 md:grid-cols-2 md:gap-4 lg:grid-cols-3',
+            'mt-8 grid w-full gap-6 md:grid-cols-2 md:gap-4 lg:grid-cols-3',
           index: 1,
         })}
       >
         {posts.map((item) => (
           <Article key={item.slug} post={item} />
         ))}
-      </main>
+      </div>
     </AnimatedSection>
   )
 }

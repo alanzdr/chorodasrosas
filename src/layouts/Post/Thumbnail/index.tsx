@@ -1,10 +1,22 @@
 import Image from 'next/image'
 import React from 'react'
+import { tv } from 'tailwind-variants'
 import { IPost } from 'types/posts'
 
 interface Props {
   data: IPost
 }
+
+const imageClassName = tv({
+  base: 'h-full w-full object-cover',
+  variants: {
+    position: {
+      center: 'object-center',
+      top: 'object-[center,25%]',
+      bottom: 'object-[center,75%]',
+    },
+  },
+})
 
 const Thumbnail: React.FC<Props> = ({ data }) => {
   return (
@@ -14,7 +26,7 @@ const Thumbnail: React.FC<Props> = ({ data }) => {
         alt="Thumbnail do Poema"
         height={400}
         width={1400}
-        className="h-full w-full object-cover object-[center,30%]"
+        className={imageClassName({ position: data.thumbPosition || 'center' })}
         priority
         sizes="100vw"
       />

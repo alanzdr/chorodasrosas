@@ -1,11 +1,11 @@
 import { type MetadataRoute } from 'next'
 import { getAllPosts } from 'services/posts'
 
-async function sitemap (): Promise<MetadataRoute.Sitemap> {
+async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseSiteUrl = process.env.SITE_URL as string
 
   const urls: MetadataRoute.Sitemap = [
-    { url: baseSiteUrl, lastModified: new Date() }
+    { url: baseSiteUrl, lastModified: new Date() },
   ]
 
   const AddUrlPath = (path: string, lastModified: Date) => {
@@ -17,12 +17,12 @@ async function sitemap (): Promise<MetadataRoute.Sitemap> {
   const posts = await getAllPosts()
   let lastDate: Date = new Date(posts[0].date)
 
-  posts.forEach(post => {
+  posts.forEach((post) => {
     const date = new Date(post.date)
     if (!lastDate || date > lastDate) {
       lastDate = date
     }
-    AddUrlPath(`/${post.slug}`, date)
+    AddUrlPath(`/poemas/${post.slug}`, date)
   })
 
   // Update Home date

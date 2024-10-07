@@ -9,7 +9,7 @@ interface Props {
 
 const Footer: React.FC<Props> = ({ single }) => {
   return (
-    <footer className="mt-20 pb-20">
+    <footer className="mt-24 pb-24">
       <About />
       {single && (
         <div className="mt-16 md:mt-20">

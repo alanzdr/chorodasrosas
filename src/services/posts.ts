@@ -18,6 +18,7 @@ export async function getAllPosts(): Promise<IPost[]> {
 
       const music = meta.data.music
       const thumb = meta.data.thumb
+      const thumbPosition = meta.data.thumbPosition || 'center'
 
       if (music) {
         tags.push(META.glossary.musicAi)
@@ -27,6 +28,7 @@ export async function getAllPosts(): Promise<IPost[]> {
         slug: post.replace('.md', ''),
         title: meta.data.title,
         thumb,
+        thumbPosition,
         tags,
         date: meta.data.date,
         music,
@@ -69,20 +71,47 @@ export async function getPostBySlug(slug: string): Promise<IPost> {
     (tag) => tag.charAt(0).toUpperCase() + tag.slice(1).toLowerCase()
   )
 
+  const music = meta.data.music
   const thumb = meta.data.thumb
+  const thumbPosition = meta.data.thumbPosition || 'center'
 
   return {
     title: meta.data.title,
     thumb,
+    thumbPosition,
     date: meta.data.date,
     tags,
     content,
     slug,
+    music,
   }
 }
 
+function relatedPostScore(post: IPost, relatedToPost: IPost): number {
+  const { tags } = relatedToPost
+
+  let score = 0
+
+  if (post.tags[0] === tags[0]) {
+    score += 1
+  }
+
+  if (post.music && relatedToPost.music && post.music !== relatedToPost.music) {
+    score += 1
+  }
+
+  score += tags.reduce((acc, tag) => {
+    if (post.tags.includes(tag)) {
+      return acc + 1
+    }
+    return acc
+  }, 0)
+
+  return score
+}
+
 export async function getRelatedsPosts(relatedToPost: IPost): Promise<IPost[]> {
-  const { slug, tags } = relatedToPost
+  const { slug } = relatedToPost
 
   const posts = await getAllPosts()
 
@@ -90,22 +119,11 @@ export async function getRelatedsPosts(relatedToPost: IPost): Promise<IPost[]> {
     .filter((post) => post.slug !== slug)
     .sort(() => Math.random() - 0.5)
 
-  const relateds: IPost[] = shufflePosts.filter(
-    (post) => post.tags[0] === tags[0]
-  )
-  const notRelateds: IPost[] = []
-
-  shufflePosts.forEach((post) => {
-    if (relateds.includes(post)) {
-      return
-    }
-    const relatedsTags = post.tags.filter((tag) => tags.includes(tag))
-    if (relatedsTags.length > 0) {
-      relateds.push(post)
-    } else {
-      notRelateds.push(post)
-    }
+  const relatedsPosts = shufflePosts.sort((a, b) => {
+    return (
+      relatedPostScore(b, relatedToPost) - relatedPostScore(a, relatedToPost)
+    )
   })
 
-  return [...relateds.slice(0, 3), ...notRelateds].slice(0, 6)
+  return relatedsPosts.slice(0, 6)
 }

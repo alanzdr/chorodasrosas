@@ -3,6 +3,7 @@ title: "O Rio"
 thumb: "https://images.pexels.com/photos/722427/pexels-photo-722427.jpeg"
 date: "2022-06-18"
 tags: "caronte,triste,morte"
+music: "O8Rg_-mbFE8"
 ---
 O homem nasce puro, eles diziam,  
 Se corrompem com laços e correntes;  

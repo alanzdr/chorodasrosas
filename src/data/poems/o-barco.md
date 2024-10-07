@@ -3,6 +3,7 @@ title: "O Barco"
 thumb: 'https://images.pexels.com/photos/2132008/pexels-photo-2132008.jpeg'
 date: "2023-02-22"
 tags: "caronte,triste,morte"
+music: "O8Rg_-mbFE8"
 ---
 Vir por meio desse te avisar,  
 Que sua vida chegou ao fim;  

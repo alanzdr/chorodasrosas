@@ -3,6 +3,7 @@ title: "Mais que gramática"
 thumb: 'https://images.pexels.com/photos/6913785/pexels-photo-6913785.jpeg'
 date: "2023-06-23"
 tags: "romântico"
+music: "TtK5fkGv6EY"
 ---
 Ela saiu de um relacionamento tóxico,  
 Ele achava que ela era o máximo;  

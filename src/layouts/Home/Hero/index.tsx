@@ -32,9 +32,7 @@ const Hero: React.FC = () => {
             Rosas
           </h1>
           <p className={animate({ className: 'mt-4 text-white', index: 1 })}>
-            Meu atelier pessoal
-            <br />
-            de poemas
+            Atelier de poemas
           </p>
         </div>
       </div>

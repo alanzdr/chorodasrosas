@@ -3,7 +3,7 @@ title: "Vênus"
 thumb: "https://images.pexels.com/photos/194040/pexels-photo-194040.jpeg"
 date: "2020-10-26"
 tags: "romântico"
-music: "https://www.youtube.com/watch?v=korB7KwEfNY"
+music: "korB7KwEfNY"
 ---
 Simples flor,  
 Pura, porém inquieta;  
