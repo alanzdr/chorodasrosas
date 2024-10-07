@@ -29,7 +29,7 @@ const PoemArticle: React.FC<Props> = ({ post }) => {
           <>
             <div
               style={{ height: '200%' }}
-              className="absolute right-0 top-0 z-10 w-1/2 rotate-45 bg-gradient-to-r from-red/0 to-red/50"
+              className="absolute -right-8 top-8 z-10 w-1/2 rotate-45 bg-gradient-to-r from-red/0 to-red/75"
             />
             <div className="group absolute bottom-3 right-3 z-20 h-8 w-8">
               <p
