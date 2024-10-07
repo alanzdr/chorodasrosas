@@ -1,0 +1,80 @@
+@tailwind base;
+
+@layer base {
+  :root {
+    --color-primary: theme(colors.red);
+    --color-background: theme(colors.gray.light);
+
+    --color-accent: theme(colors.gray.dark);
+    --color-accent-text: theme(colors.white);
+
+    --card-shadow: rgba(0, 0, 0, 0.25) 0px 2px 5px -1px,
+      rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    --card-shadow-hover: rgba(0, 0, 0, 0.25) 0px 16px 35px -12px,
+      rgba(0, 0, 0, 0.3) 0px 8px 21px -9px;
+
+    --ease-out: cubic-bezier(0, 0, 0.4, 1);
+    /* transition: none; */
+  }
+
+  html,
+  body {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: var(--color-background);
+    color: theme(colors.gray.dark);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    color: var(--color-primary);
+    font-weight: 500;
+    font-family: theme(fontFamily.amatic);
+  }
+
+  p,
+  button,
+  a,
+  label,
+  input {
+    color: theme(colors.current.DEFAULT);
+    font-family: theme(fontFamily.roboto);
+  }
+
+  button,
+  a {
+    transition-property: color, background-color, border-color,
+      text-decoration-color, fill, stroke;
+    transition-timing-function: theme(transitionTimingFunction.DEFAULT);
+    transition-duration: theme(transitionDuration.DEFAULT);
+  }
+
+  strong,
+  b {
+    font-weight: 700;
+  }
+
+  .dark {
+    color: theme(colors.white);
+    --color-accent: theme(colors.white);
+    --color-accent-text: theme(colors.gray.dark);
+  }
+
+  .light {
+    color: theme(colors.gray.dark);
+    --color-accent: theme(colors.gray.dark);
+    --color-accent-text: theme(colors.white);
+  }
+}

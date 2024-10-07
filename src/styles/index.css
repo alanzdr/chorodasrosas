@@ -1,0 +1,10 @@
+@import './base.css';
+@import './components/index.css';
+@import './utilities.css';
+@import 'zelindro-ui/styles.css';
+
+/* .animated {
+  transition-property: opacity, transform;
+  transition-duration: 1000ms;
+  transition-timing-function: cubic-bezier(0, 0, 0.4, 1);
+} */

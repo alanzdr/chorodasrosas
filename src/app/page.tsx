@@ -1,18 +1,8 @@
-import React from 'react'
-import { Metadata } from 'next'
-
 import Home from 'layouts/Home'
+import React from 'react'
 import { getAllPosts } from 'services/posts'
-import { getMetadata } from 'utils/seo'
 
-export const metadata: Metadata = getMetadata({
-  title: 'Choro das Rosas - Atelier de Poemas',
-  description: 'A pagina nasceu com objetivo de ficar como um atelier online e manter meus poemas para que outras pessoas possam ver e talvez sentir um pouco do que eu estava sentindo quando escrevi.'
-
-})
-
-export default async function Page () {
+export default async function Page() {
   const posts = await getAllPosts()
-
-  return <Home posts={posts}/>
+  return <Home posts={posts} />
 }

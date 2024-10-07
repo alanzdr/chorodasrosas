@@ -1,38 +1,53 @@
-import React from 'react'
-import Image from 'next/image'
-import classNames from 'classnames'
 import AnimatedSection from 'components/AnimatedSection'
-import { animate } from 'utils/animation'
+import Image from 'next/image'
+import React from 'react'
+import { animate } from 'zelindro-ui/utils/animation'
 
 const Hero: React.FC = () => {
   return (
-    <AnimatedSection
-      className="relative w-full h-screen overflow-hidden"
-    >
-      <div className="absolute z-0 left-0 top-0 w-full h-full">
+    <AnimatedSection className="relative h-screen w-full overflow-hidden">
+      <div className="absolute left-0 top-0 z-0 h-full w-full">
         <Image
-          src='https://images.pexels.com/photos/1233414/pexels-photo-1233414.jpeg'
+          src="https://images.pexels.com/photos/1233414/pexels-photo-1233414.jpeg"
           alt="Imagem de fundo"
-          className='w-full h-full object-cover object-[5%,center] lg:object-center'
+          className="h-full w-full object-cover object-[5%,center] lg:object-center"
           height={933}
           width={1400}
           priority
-          loading='eager'
-          sizes='100vw'
+          loading="eager"
+          sizes="100vw"
         />
       </div>
-      <div className="absolute top-8 left-0 w-full z-10">
-        <div className='container'>
-          <h1 className={classNames('text-9xl font-amatic text-white', animate())}>
-            Choro<br />
-            Das<br />
+      <div className="absolute left-0 top-8 z-10 w-full">
+        <div className="container">
+          <h1
+            className={animate({
+              className: 'font-amatic text-9xl text-white',
+            })}
+          >
+            Choro
+            <br />
+            Das
+            <br />
             Rosas
           </h1>
-          <p className={classNames('text-white mt-4', animate(1))}>Meu atelier pessoal<br />de poemas</p>
+          <p className={animate({ className: 'mt-4 text-white', index: 1 })}>
+            Meu atelier pessoal
+            <br />
+            de poemas
+          </p>
         </div>
       </div>
-      <div className={classNames('absolute z-10 bottom-20 md:bottom-4 left-1/2', animate(2))}>
-        <a href="#poemas" className='flex flex-col items-center justify-center text-white font-bold -translate-x-1/2 transition-opacity ease-out hover:opacity-75'>
+      <div
+        className={animate({
+          className: 'absolute bottom-20 left-1/2 z-10 md:bottom-4',
+          index: 2,
+        })}
+      >
+        <a
+          href="#poemas"
+          className="flex -translate-x-1/2 flex-col items-center justify-center font-bold text-white transition-opacity ease-out hover:opacity-75"
+        >
           <p>POEMAS</p>
           <svg
             xmlns="http://www.w3.org/2000/svg"

@@ -1,6 +1,5 @@
-import React from 'react'
 import Image from 'next/image'
-
+import React from 'react'
 import { IPost } from 'types/posts'
 
 interface Props {
@@ -9,15 +8,15 @@ interface Props {
 
 const Thumbnail: React.FC<Props> = ({ data }) => {
   return (
-    <div className="fixed w-full top-0 left-0 z-0 h-72 md:h-[25rem] lg:h-[27rem] xl:h-[30rem] bg-gray-dark">
+    <div className="fixed left-0 top-0 z-0 h-72 w-full bg-gray-dark md:h-[25rem] lg:h-[27rem] xl:h-[30rem]">
       <Image
         src={data.thumb}
         alt="Thumbnail do Poema"
         height={400}
         width={1400}
-        className='w-full h-full object-cover object-[center,30%]'
+        className="h-full w-full object-cover object-[center,30%]"
         priority
-        sizes='100vw'
+        sizes="100vw"
       />
     </div>
   )

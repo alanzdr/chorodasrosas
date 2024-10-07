@@ -1,0 +1,50 @@
+@tailwind utilities;
+
+@layer utilities {
+  .no-hover,
+  .no-hover * {
+    pointer-events: none !important;
+  }
+
+  .rotate-x-180 {
+    transform: rotateX(180deg);
+  }
+
+  .offset-container {
+    --container: calc(100vw - 4rem);
+    --margin: calc((100vw - var(--container)) / 2);
+  }
+
+  .h-screen {
+    height: 100vh;
+    height: 100dvh;
+  }
+
+  .offset-right {
+    padding-left: theme(padding.4);
+    padding-right: theme(padding.4);
+  }
+
+  .offset-left {
+    padding-left: theme(padding.4);
+    padding-right: theme(padding.4);
+  }
+
+  @media (min-width: 768px) {
+    .offset-right {
+      padding-left: 0;
+      padding-right: var(--margin);
+    }
+
+    .offset-left {
+      padding-right: 0;
+      padding-left: var(--margin);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .offset-container {
+      --container: min(81.25rem, 91.666667vw);
+    }
+  }
+}

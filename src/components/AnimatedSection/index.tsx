@@ -1,8 +1,8 @@
 'use client'
 
-import classNames from 'classnames'
-import React from 'react'
 import useIntersectObserver from 'hooks/use-intersect-observer'
+import React from 'react'
+import { twMerge } from 'tailwind-merge'
 
 interface Props extends React.HTMLAttributes<HTMLDivElement> {
   Tag?: React.ElementType
@@ -19,9 +19,11 @@ const AnimatedSection: React.FC<Props> = ({
   return (
     <Tag
       ref={intersectReference}
-      className={classNames('animated-section', className, {
-        'animation-visible': isVisible
-      })}
+      className={twMerge(
+        'animation-container',
+        className,
+        isVisible ? 'animation-visible' : ''
+      )}
       {...rest}
     >
       {children}

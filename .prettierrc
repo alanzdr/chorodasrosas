@@ -1,0 +1,13 @@
+{
+  "printWidth": 80,
+  "proseWrap": "always",
+  "semi": false,
+  "editor.formatOnSave": true,
+  "trailingComma": "es5",
+  "singleQuote": true,
+  "tabWidth": 2,
+  "useTabs": false,
+  "jsxSingleQuote": false,
+  "bracketSpacing": true,
+  "plugins": ["prettier-plugin-tailwindcss"]
+}

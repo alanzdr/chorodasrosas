@@ -1,11 +1,9 @@
-import React, { useMemo } from 'react'
-
-import Article from 'components/Article'
-import { IPost } from 'types/posts'
-import classNames from 'classnames'
 import AnimatedSection from 'components/AnimatedSection'
-import { animate } from 'utils/animation'
+import Article from 'components/Article'
 import dynamic from 'next/dynamic'
+import React, { useMemo } from 'react'
+import { IPost } from 'types/posts'
+import { animate } from 'zelindro-ui/utils/animation'
 
 interface Props {
   posts: IPost[]
@@ -14,24 +12,37 @@ interface Props {
 const Filter = dynamic(() => import('./filter'), { ssr: false })
 
 const Poems: React.FC<Props> = ({ posts }) => {
-  const postsTags = useMemo(() => posts.reduce((acc, current) => {
-    current.tags?.forEach((tag) => {
-      if (tag && !acc.includes(tag)) {
-        acc.push(tag)
-      }
-    })
-    return acc
-  }, [] as string[]), [])
+  const postsTags = useMemo(
+    () =>
+      posts.reduce((acc, current) => {
+        current.tags?.forEach((tag) => {
+          if (tag && !acc.includes(tag)) {
+            acc.push(tag)
+          }
+        })
+        return acc
+      }, [] as string[]),
+    []
+  )
 
   return (
-    <AnimatedSection id="poemas" className="my-10 md:my-20 container">
-      <div className={classNames('flex items-end justify-between', animate())}>
-        <h2 className='text-red text-5xl md:text-6xl'>Poemas</h2>
-        <Filter
-          tags={postsTags}
-        />
+    <AnimatedSection id="poemas" className="container my-10 md:my-20">
+      <div
+        className={animate({
+          className: 'flex items-end justify-between',
+        })}
+      >
+        <h2 className="text-5xl text-red md:text-6xl">Poemas</h2>
+        <Filter tags={postsTags} />
       </div>
-      <main id="posts-container" className={classNames('relative w-full mt-8 grid gap-6 md:gap-4 md:grid-cols-2 lg:grid-cols-3 ', animate(1))}>
+      <main
+        id="posts-container"
+        className={animate({
+          className:
+            'relative mt-8 grid w-full gap-6 md:grid-cols-2 md:gap-4 lg:grid-cols-3',
+          index: 1,
+        })}
+      >
         {posts.map((item) => (
           <Article key={item.slug} post={item} />
         ))}

@@ -1,5 +1,5 @@
-import classNames from 'classnames'
 import React from 'react'
+import { twMerge } from 'tailwind-merge'
 
 interface Properties {
   className?: string
@@ -8,12 +8,12 @@ interface Properties {
 const PageLoading: React.FC<Properties> = ({ className }) => {
   return (
     <div
-      className={classNames(
-        'w-full h-screen flex items-center justify-center',
+      className={twMerge(
+        'flex h-screen w-full items-center justify-center',
         className
       )}
     >
-      <div className="relative w-16 h-16 animate-spin border-solid border-[transparent] border-t-red rounded-full border-[5px] " />
+      <div className="relative h-16 w-16 animate-spin rounded-full border-[5px] border-solid border-[transparent] border-t-red" />
     </div>
   )
 }

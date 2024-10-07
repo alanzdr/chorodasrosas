@@ -1,28 +1,35 @@
+import META from 'data/meta.json'
 import matter from 'gray-matter'
 import { marked } from 'marked'
 import { IPost } from 'types/posts'
 
-export async function getAllPosts () : Promise<IPost[]> {
-  const context = require.context('../data', false, /\.md$/)
-  const posts : IPost[] = []
+export async function getAllPosts(): Promise<IPost[]> {
+  const context = require.context('../data/poems', false, /\.md$/)
+  const posts: IPost[] = []
 
   for (const key of context.keys()) {
-    // console.log(key.slice(0, 4))
     if (key.slice(0, 4) !== 'data') {
       const post = key.slice(2)
-      const content = await import(`../data/${post}`)
+      const content = await import(`../data/poems/${post}`)
       const meta = matter(content.default)
-      const tags = (meta.data.tags?.split(',') || [] as string[])
-        .map((tag) => tag.charAt(0).toUpperCase() + tag.slice(1).toLowerCase())
+      const tags = (meta.data.tags?.split(',') || ([] as string[])).map(
+        (tag) => tag.charAt(0).toUpperCase() + tag.slice(1).toLowerCase()
+      )
 
+      const music = meta.data.music
       const thumb = meta.data.thumb
+
+      if (music) {
+        tags.push(META.glossary.musicAi)
+      }
 
       posts.push({
         slug: post.replace('.md', ''),
         title: meta.data.title,
         thumb,
         tags,
-        date: meta.data.date
+        date: meta.data.date,
+        music,
       } as IPost)
     }
   }
@@ -38,9 +45,9 @@ export async function getAllPosts () : Promise<IPost[]> {
   })
 }
 
-export async function getPostsSlugs () : Promise<string[]> {
-  const context = require.context('../data', false, /\.md$/)
-  const slugs : string[] = []
+export async function getPostsSlugs(): Promise<string[]> {
+  const context = require.context('../data/poems', false, /\.md$/)
+  const slugs: string[] = []
 
   for (const key of context.keys()) {
     // console.log(key.slice(0, 4))
@@ -53,13 +60,14 @@ export async function getPostsSlugs () : Promise<string[]> {
   return slugs
 }
 
-export async function getPostBySlug (slug: string) : Promise<IPost> {
-  const fileContent = await import(`../data/${slug}.md`)
+export async function getPostBySlug(slug: string): Promise<IPost> {
+  const fileContent = await import(`../data/poems/${slug}.md`)
 
   const meta = matter(fileContent.default)
-  const content = marked.parse(meta.content)
-  const tags = (meta.data.tags?.split(',') || [] as string[])
-    .map((tag) => tag.charAt(0).toUpperCase() + tag.slice(1).toLowerCase())
+  const content = await marked.parse(meta.content)
+  const tags = (meta.data.tags?.split(',') || ([] as string[])).map(
+    (tag) => tag.charAt(0).toUpperCase() + tag.slice(1).toLowerCase()
+  )
 
   const thumb = meta.data.thumb
 
@@ -69,20 +77,22 @@ export async function getPostBySlug (slug: string) : Promise<IPost> {
     date: meta.data.date,
     tags,
     content,
-    slug
+    slug,
   }
 }
 
-export async function getRelatedsPosts (relatedToPost: IPost) : Promise<IPost[]> {
+export async function getRelatedsPosts(relatedToPost: IPost): Promise<IPost[]> {
   const { slug, tags } = relatedToPost
 
   const posts = await getAllPosts()
 
   const shufflePosts = posts
-    .filter(post => post.slug !== slug)
+    .filter((post) => post.slug !== slug)
     .sort(() => Math.random() - 0.5)
 
-  const relateds: IPost[] = shufflePosts.filter((post) => post.tags[0] === tags[0])
+  const relateds: IPost[] = shufflePosts.filter(
+    (post) => post.tags[0] === tags[0]
+  )
   const notRelateds: IPost[] = []
 
   shufflePosts.forEach((post) => {

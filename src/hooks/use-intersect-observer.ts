@@ -4,7 +4,7 @@ import React from 'react'
 
 const { useEffect, useState, useRef } = React
 
-function useIntersectObserver () {
+function useIntersectObserver() {
   const [isVisible, setVisible] = useState(false)
   const reference = useRef(null)
 
@@ -18,7 +18,7 @@ function useIntersectObserver () {
     }
 
     const observer = new IntersectionObserver(onIntersect, {
-      rootMargin: '0px 0px -33.3333% 0px'
+      rootMargin: '0px 0px -33.3333% 0px',
     })
 
     observer.observe(reference.current as Element)

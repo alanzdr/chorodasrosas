@@ -1,0 +1,10 @@
+@tailwind components;
+
+@import './card.css';
+@import './post.css';
+
+@layer components {
+  .container {
+    @apply mx-auto w-[90%] max-w-[75rem];
+  }
+}

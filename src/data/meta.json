@@ -1,0 +1,22 @@
+{
+  "siteName": "Choro das Rosas",
+  "author": {
+    "name": "Alanderson Zelindro da Rosa",
+    "url": "https://www.instagram.com/alandersonzdr"
+  },
+  "themeColor": "#b40f20",
+  "siteDescription": "A pagina nasceu com objetivo de ficar como um atelier online e manter meus poemas para que outras pessoas possam ver e talvez sentir um pouco do que eu estava sentindo quando escrevi.",
+  "generator": {
+    "page": {
+      "title": "%s - Atelier de Poemas",
+      "description": "%s"
+    },
+    "poem": {
+      "title": "%s - Poema | Choro das Rosas",
+      "description": "Clique para ler o poema %s e outros, esse é meu atelier online de poemas, fique à vontade"
+    }
+  },
+  "glossary": {
+    "musicAi": "Música em IA"
+  }
+}

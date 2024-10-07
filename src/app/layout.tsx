@@ -1,50 +1,57 @@
-/* eslint-disable camelcase */
-import React from 'react'
-import Script from 'next/script'
-import classNames from 'classnames'
-import { Roboto, Amatic_SC } from 'next/font/google'
+import 'styles/index.css'
 
-import 'styles/global.css'
+import META from 'data/meta.json'
 import { Metadata } from 'next'
+import { Amatic_SC, Roboto } from 'next/font/google'
+import Script from 'next/script'
+import React from 'react'
+import { twMerge } from 'tailwind-merge'
 import { getMetadata } from 'utils/seo'
 
 const amaticSC = Amatic_SC({
   weight: '700',
   subsets: ['latin'],
-  variable: '--font-amaticsc'
+  variable: '--font-amaticsc',
 })
 
 const roboto = Roboto({
   weight: '300',
   subsets: ['latin'],
-  variable: '--font-roboto'
+  variable: '--font-roboto',
 })
 
-export async function generateViewport () {
+export async function generateViewport() {
   return {
-    themeColor: '#b40f20'
+    themeColor: META.themeColor,
   }
 }
 
-export const metadata: Metadata = getMetadata({
-  title: 'Choro das Rosas - Atelier de Poemas',
-  description: 'A pagina nasceu com objetivo de ficar como um atelier online e manter meus poemas para que outras pessoas possam ver e talvez sentir um pouco do que eu estava sentindo quando escrevi.'
+export const metadata: Metadata = getMetadata('page', {
+  title: META.siteName,
+  description: '',
 })
 
-export default function RootLayout ({
-  children
+export default function RootLayout({
+  children,
 }: {
   children: React.ReactNode
 }) {
   return (
     <html lang="pt-BR">
       <head />
-      <body className={classNames(amaticSC.variable, roboto.variable, 'relative font-roboto')}>
+      <body
+        className={twMerge(
+          amaticSC.variable,
+          roboto.variable,
+          'relative font-roboto'
+        )}
+      >
         {children}
         <Script
           async
           defer
           src="https://www.googletagmanager.com/gtag/js?id=G-X6CQH7YMH7"
+          strategy="lazyOnload"
         />
         <Script id="google-tag-manager" strategy="afterInteractive">
           {`

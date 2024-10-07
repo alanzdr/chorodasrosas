@@ -1,6 +1,6 @@
-import React from 'react'
 import PageLoading from 'components/PageLoading'
+import React from 'react'
 
-export default async function Loading () {
+export default async function Loading() {
   return <PageLoading />
 }

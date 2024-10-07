@@ -1,0 +1,12 @@
+.post {
+  @apply transition-[opacity,filter] duration-300 ease-out;
+}
+
+.post.show {
+  order: 0;
+}
+
+.post.hide {
+  order: 1;
+  @apply opacity-75 grayscale;
+}

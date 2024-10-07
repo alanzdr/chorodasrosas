@@ -1,9 +1,9 @@
+import Footer from 'components/Footer'
 import React from 'react'
+import { IPost } from 'types/posts'
 
 import Hero from './Hero'
 import Poems from './Poems'
-import Footer from 'components/Footer'
-import { IPost } from 'types/posts'
 
 interface Props {
   posts: IPost[]
