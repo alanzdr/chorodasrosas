@@ -36,7 +36,7 @@ const PoemArticle: React.FC<Props> = ({ post }) => {
                 style={{ right: `calc(100% + 8px)` }}
                 className="card pointer-events-none absolute top-1/2 origin-right -translate-y-1/2 scale-0 text-nowrap break-keep bg-white px-2.5 py-1 text-xs leading-none opacity-0 transition-all group-hover:pointer-events-auto group-hover:scale-100 group-hover:opacity-100"
               >
-                Com musica em IA
+                Com música em IA
               </p>
               <Image
                 src={YoutubeIcon}
