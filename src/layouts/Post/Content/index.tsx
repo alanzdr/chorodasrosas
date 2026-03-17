@@ -16,7 +16,8 @@ const Content: React.FC<Props> = ({ title, content }) => {
         {content && (
           <div
             className={animate({
-              className: 'mt-10 text-base md:text-lg',
+              className:
+                'mt-10 text-base md:text-lg flex flex-col gap-5 md:gap-6',
               index: 1,
             })}
             dangerouslySetInnerHTML={{

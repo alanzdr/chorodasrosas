@@ -23,7 +23,7 @@ const Thumbnail: React.FC<Props> = ({ data }) => {
   return (
     <div className="h-75 md:h-[25rem] lg:h-[27rem] xl:h-[30rem] bg-gray-dark">
       <ViewTransition name={`post-${data.slug}-thumb`}>
-        <div className="fixed left-0 top-0 z-0 h-72 w-full md:h-[25rem] lg:h-[27rem] xl:h-[30rem]">
+        <div className="fixed left-0 top-0 z-0 h-72 w-full md:h-[25rem] lg:h-[27rem] xl:h-[30rem] pointer-events-none">
           <Image
             src={data.thumb}
             alt="Thumbnail do Poema"

@@ -16,6 +16,22 @@ async function getPostData(slug: string): Promise<PostFileData> {
   return postData
 }
 
+async function handleMDContent(content: string): Promise<string> {
+  let parsedContent = content
+
+  // Remove all <br> and <br /> from the content
+  parsedContent = parsedContent.replace(/<br\s*\/?>/gi, '')
+  // Remove empty spaces
+  parsedContent = parsedContent.replace(/ +/g, ' ').trim()
+
+  parsedContent = await marked.parse(parsedContent, {
+    breaks: true,
+    gfm: true,
+  })
+
+  return parsedContent
+}
+
 export async function getAllPosts(): Promise<IPost[]> {
   const context = require.context('../data/poems', false, /\.md$/)
   const posts: IPost[] = []
@@ -77,7 +93,7 @@ export async function getPostsSlugs(): Promise<string[]> {
 export async function getPostBySlug(slug: string): Promise<IPost> {
   const meta = await getPostData(slug)
 
-  const content = await marked.parse(meta.content)
+  const content = await handleMDContent(meta.content)
 
   const tags = (meta.data.tags?.split(',') || ([] as string[])).map(
     (tag) => tag.charAt(0).toUpperCase() + tag.slice(1).toLowerCase()
