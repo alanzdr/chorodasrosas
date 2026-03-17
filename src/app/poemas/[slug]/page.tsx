@@ -1,13 +1,13 @@
 import PostLayout from 'layouts/Post'
-import { Metadata } from 'next'
-import React from 'react'
+import type { Metadata } from 'next'
+import { ViewTransition } from 'react'
 import { getPostBySlug, getPostsSlugs, getRelatedsPosts } from 'services/posts'
 import { getMetadata } from 'utils/seo'
 
 interface Props {
-  params: {
+  params: Promise<{
     slug: string
-  }
+  }>
 }
 
 export async function generateStaticParams() {
@@ -21,20 +21,28 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const data = await getPostBySlug(params.slug)
+  const { slug } = await params
+
+  const data = await getPostBySlug(slug)
 
   return getMetadata('poem', {
     title: data.title,
     description: data.title,
-    url: `/${params.slug}`,
+    url: `/poemas/${slug}`,
   })
 }
 
 const Page = async ({ params }: Props) => {
-  const data = await getPostBySlug(params.slug)
+  const { slug } = await params
+
+  const data = await getPostBySlug(slug)
   const relateds = await getRelatedsPosts(data)
 
-  return <PostLayout data={data} relateds={relateds} />
+  return (
+    <ViewTransition name="page">
+      <PostLayout data={data} relateds={relateds} />
+    </ViewTransition>
+  )
 }
 
 export default Page

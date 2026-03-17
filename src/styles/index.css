@@ -1,10 +1,57 @@
-@import './base.css';
-@import './components/index.css';
-@import './utilities.css';
-@import 'zelindro-ui/styles.css';
+@import 'tailwindcss';
 
-/* .animated {
-  transition-property: opacity, transform;
-  transition-duration: 1000ms;
-  transition-timing-function: cubic-bezier(0, 0, 0.4, 1);
-} */
+:root {
+  --distance-small: --spacing(8);
+  --distance-medium: --spacing(16);
+  --distance-large: --spacing(24);
+
+  --card-shadow: var(--shadow-card);
+  --card-shadow-hover: var(--shadow-card-hover);
+  --ease-out: cubic-bezier(0, 0, 0.4, 1);
+
+  @media (width >= theme(--breakpoint-md)) {
+    --distance-small: --spacing(10);
+    --distance-medium: --spacing(24);
+    --distance-large: --spacing(32);
+  }
+}
+
+@theme {
+  /* COLORS */
+  --color-*: initial;
+  --color-gray-dark: #333;
+  --color-gray-light: #c9c9d1;
+  --color-red: #b40f20;
+  --color-white: #fff;
+  --color-black: #000;
+
+  
+  --color-background: var(--color-gray-light);
+  --color-primary: var(--color-red);
+
+  --color-accent: var(--color-gray-dark);
+  --color-accent-text: var(--color-white);
+
+  /* FONTS */
+  --font-*: initial;
+  --font-roboto: var(--font-family-roboto);
+  --font-amatic: var(--font-family-amaticsc);
+
+   /* TRANSITION */
+  --default-transition-timing-function: cubic-bezier(0, 0, 0.4, 1);
+  --default-transition-duration: 300ms;
+
+  /* BOX SHADOW */
+  --shadow-card:
+    rgba(0, 0, 0, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  --shadow-card-hover: rgba(0, 0, 0, 0.25) 0px 16px 35px -12px,
+    rgba(0, 0, 0, 0.3) 0px 8px 21px -9px;  
+}
+
+
+@import './base.css' layer(base);
+@import './components.css' layer(components);
+@import './utilities.css';
+
+@import './modules/section.css';
+@import './modules/animation.css';

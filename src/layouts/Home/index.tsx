@@ -1,6 +1,7 @@
 import Footer from 'components/Footer'
 import React from 'react'
-import { IPost } from 'types/posts'
+
+import type { IPost } from '@/types/posts'
 
 import Hero from './Hero'
 import Poems from './Poems'

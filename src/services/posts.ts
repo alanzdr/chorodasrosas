@@ -1,7 +1,20 @@
 import META from 'data/meta.json'
 import matter from 'gray-matter'
 import { marked } from 'marked'
-import { IPost } from 'types/posts'
+
+import type { IPost, IPostMetadata } from '@/types/posts'
+
+type PostFileData = matter.GrayMatterFile<string> & {
+  data: IPostMetadata
+}
+
+async function getPostData(slug: string): Promise<PostFileData> {
+  const fileName = slug.endsWith('.md') ? slug : `${slug}.md`
+  const fileContent = await import(`../data/poems/${fileName}`)
+  const postData = matter(fileContent.default) as PostFileData
+
+  return postData
+}
 
 export async function getAllPosts(): Promise<IPost[]> {
   const context = require.context('../data/poems', false, /\.md$/)
@@ -10,8 +23,7 @@ export async function getAllPosts(): Promise<IPost[]> {
   for (const key of context.keys()) {
     if (key.slice(0, 4) !== 'data') {
       const post = key.slice(2)
-      const content = await import(`../data/poems/${post}`)
-      const meta = matter(content.default)
+      const meta = await getPostData(post)
       const tags = (meta.data.tags?.split(',') || ([] as string[])).map(
         (tag) => tag.charAt(0).toUpperCase() + tag.slice(1).toLowerCase()
       )
@@ -63,10 +75,10 @@ export async function getPostsSlugs(): Promise<string[]> {
 }
 
 export async function getPostBySlug(slug: string): Promise<IPost> {
-  const fileContent = await import(`../data/poems/${slug}.md`)
+  const meta = await getPostData(slug)
 
-  const meta = matter(fileContent.default)
   const content = await marked.parse(meta.content)
+
   const tags = (meta.data.tags?.split(',') || ([] as string[])).map(
     (tag) => tag.charAt(0).toUpperCase() + tag.slice(1).toLowerCase()
   )

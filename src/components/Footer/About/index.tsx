@@ -2,12 +2,19 @@ import AboutImage from 'assets/about.png'
 import AnimatedSection from 'components/AnimatedSection'
 import Image from 'next/image'
 import React from 'react'
-import { animate } from 'zelindro-ui/utils/animation'
+
+import { animate } from '@/utils/animate'
 
 const About: React.FC = () => {
   return (
-    <AnimatedSection Tag="div" className="container max-w-[50rem]">
-      <div className="flex grid-cols-[5fr,6fr] flex-col gap-10 md:grid">
+    <AnimatedSection Tag="div">
+      <div
+        className="container flex flex-col gap-10 md:grid"
+        style={{
+          maxWidth: '50rem',
+          gridTemplateColumns: '5fr 6fr',
+        }}
+      >
         <div className={animate(0, 'flex items-center justify-end')}>
           <Image
             src={AboutImage}

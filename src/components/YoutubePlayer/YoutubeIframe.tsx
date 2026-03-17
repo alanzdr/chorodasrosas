@@ -1,7 +1,8 @@
 'use client'
 
 import React, { useEffect, useMemo } from 'react'
-import { useIntersectObserver } from 'zelindro-ui/hooks'
+
+import { useIntersectObserver } from '@/hooks/use-intersect-observer'
 
 import { type IYoutubePlayerProps } from './types'
 

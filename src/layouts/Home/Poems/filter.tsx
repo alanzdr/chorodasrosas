@@ -14,7 +14,7 @@ const PoemsFilter: React.FC<Props> = ({ tags }) => {
   const onChangeTags = useCallback((tag: string) => {
     const container = document.getElementById('posts-container') as HTMLElement
 
-    const posts = container.querySelectorAll('.post') as NodeListOf<HTMLElement>
+    const posts = container.querySelectorAll<HTMLDivElement>('.post')
 
     if (!tag) {
       posts.forEach((post) => {

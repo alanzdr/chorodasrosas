@@ -1,11 +1,15 @@
-import AnimatedSection from 'components/AnimatedSection'
 import Image from 'next/image'
 import React from 'react'
-import { animate } from 'zelindro-ui/utils/animation'
+
+import AnimatedSection from '@/components/AnimatedSection'
+import { animate } from '@/utils/animate'
 
 const Hero: React.FC = () => {
   return (
-    <AnimatedSection className="relative h-screen w-full overflow-hidden">
+    <AnimatedSection
+      className="relative h-screen w-full overflow-hidden"
+      spacing="none"
+    >
       <div className="absolute left-0 top-0 z-0 h-full w-full">
         <Image
           src="https://images.pexels.com/photos/1233414/pexels-photo-1233414.jpeg"

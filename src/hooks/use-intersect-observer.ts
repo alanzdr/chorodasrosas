@@ -4,9 +4,11 @@ import React from 'react'
 
 const { useEffect, useState, useRef } = React
 
-function useIntersectObserver() {
+export function useIntersectObserver<T extends HTMLElement = any>(
+  options?: IntersectionObserverInit
+) {
   const [isVisible, setVisible] = useState(false)
-  const reference = useRef(null)
+  const reference = useRef<T>(null)
 
   useEffect(() => {
     if (!reference.current || isVisible) return
@@ -19,16 +21,15 @@ function useIntersectObserver() {
 
     const observer = new IntersectionObserver(onIntersect, {
       rootMargin: '0px 0px -33.3333% 0px',
+      ...options,
     })
 
-    observer.observe(reference.current as Element)
+    observer.observe(reference.current)
 
     return () => {
       observer.disconnect()
     }
   }, [isVisible])
 
-  return [isVisible, reference] as [boolean, any]
+  return [isVisible, reference] as [boolean, React.RefObject<T>]
 }
-
-export default useIntersectObserver

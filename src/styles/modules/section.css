@@ -1,0 +1,31 @@
+@theme {
+  --section-top: 0rem;
+  --section-bottom: 0rem;
+}
+
+@layer components {
+  .section-small {
+    --section-top: var(--distance-small, --spacing(8));
+    --section-bottom: var(--distance-small, --spacing(8));
+  }
+
+  .section-medium {
+    --section-top: var(--distance-medium, --spacing(16));
+    --section-bottom: var(--distance-medium, --spacing(16));
+  }
+
+  .section-large {
+    --section-top: var(--distance-large, --spacing(24));
+    --section-bottom: var(--distance-large, --spacing(24));
+  }
+
+  .section-margin {
+    margin-top: var(--section-top);
+    margin-bottom: var(--section-bottom);
+  }
+
+  .section-padding {
+    padding-top: var(--section-top);
+    padding-bottom: var(--section-bottom);
+  }
+}

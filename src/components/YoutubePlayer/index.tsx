@@ -1,12 +1,8 @@
-import dynamic from 'next/dynamic'
 import React from 'react'
 import { tv } from 'tailwind-variants'
 
 import { type IYoutubePlayerProps } from './types'
-
-const YoutubeIframe = dynamic(async () => await import('./YoutubeIframe'), {
-  ssr: false,
-})
+import YoutubeIframe from './YoutubeIframe'
 
 function getVideoIdFromString(stringValue: string) {
   if (stringValue.startsWith('http') || stringValue.includes('youtube')) {

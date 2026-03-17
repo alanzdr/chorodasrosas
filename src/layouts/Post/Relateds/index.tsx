@@ -1,8 +1,9 @@
 import AnimatedSection from 'components/AnimatedSection'
 import Article from 'components/Article'
 import React from 'react'
-import { IPost } from 'types/posts'
-import { animate } from 'zelindro-ui/utils/animation'
+
+import type { IPost } from '@/types/posts'
+import { animate } from '@/utils/animate'
 
 interface Props {
   posts: IPost[]

@@ -1,80 +1,87 @@
-@tailwind base;
+html,
+body {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+}
 
-@layer base {
-  :root {
-    --color-primary: theme(colors.red);
-    --color-background: theme(colors.gray.light);
+html {
+  scroll-behavior: smooth;
+}
 
-    --color-accent: theme(colors.gray.dark);
-    --color-accent-text: theme(colors.white);
+body {
+  background: var(--color-background);
+  color: var(--color-gray-dark);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
-    --card-shadow: rgba(0, 0, 0, 0.25) 0px 2px 5px -1px,
-      rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-    --card-shadow-hover: rgba(0, 0, 0, 0.25) 0px 16px 35px -12px,
-      rgba(0, 0, 0, 0.3) 0px 8px 21px -9px;
+h1,
+h2,
+h3,
+h4 {
+  color: var(--color-primary);
+  font-weight: 500;
+  font-family: var(--font-amatic);
+}
 
-    --ease-out: cubic-bezier(0, 0, 0.4, 1);
-    /* transition: none; */
+p,
+button,
+a,
+label,
+input {
+  color: currentColor;
+  font-family: var(--font-roboto);
+}
+
+button,
+a {
+  @apply transition-all;
+  /* transition-property: color, background-color, border-color,
+    text-decoration-color, fill, stroke;
+  transition-timing-function: theme(transitionTimingFunction.DEFAULT);
+  transition-duration: theme(transitionDuration.DEFAULT); */
+}
+
+strong,
+b {
+  font-weight: 700;
+}
+
+.dark {
+  color: var(--color-white);
+  --color-accent: var(--color-white);
+  --color-accent-text: var(--color-gray-dark);
+}
+
+.light {
+  color: var(--color-gray-dark);
+  --color-accent: var(--color-gray-dark);
+  --color-accent-text: var(--color-white);
+}
+
+@keyframes enter-animation {
+  from {
+    opacity: 0;
   }
-
-  html,
-  body {
-    box-sizing: border-box;
-    width: 100%;
-    height: 100%;
+  to {
+    opacity: 1;
   }
+}
 
-  html {
-    scroll-behavior: smooth;
-  }
+::view-transition-group(root),
+::view-transition-group(page) {
+  z-index: 10;
+}
 
-  body {
-    background: var(--color-background);
-    color: theme(colors.gray.dark);
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
+::view-transition-group(root),
+::view-transition-old(page) {
+  animation: enter-animation 200ms ease-out reverse forwards;
+  transform-origin: top center;
+}
 
-  h1,
-  h2,
-  h3,
-  h4 {
-    color: var(--color-primary);
-    font-weight: 500;
-    font-family: theme(fontFamily.amatic);
-  }
-
-  p,
-  button,
-  a,
-  label,
-  input {
-    color: theme(colors.current.DEFAULT);
-    font-family: theme(fontFamily.roboto);
-  }
-
-  button,
-  a {
-    transition-property: color, background-color, border-color,
-      text-decoration-color, fill, stroke;
-    transition-timing-function: theme(transitionTimingFunction.DEFAULT);
-    transition-duration: theme(transitionDuration.DEFAULT);
-  }
-
-  strong,
-  b {
-    font-weight: 700;
-  }
-
-  .dark {
-    color: theme(colors.white);
-    --color-accent: theme(colors.white);
-    --color-accent-text: theme(colors.gray.dark);
-  }
-
-  .light {
-    color: theme(colors.gray.dark);
-    --color-accent: theme(colors.gray.dark);
-    --color-accent-text: theme(colors.white);
-  }
+::view-transition-group(root),
+::view-transition-new(page) {
+  animation: enter-animation 200ms ease-in forwards;
+  transform-origin: top center;
 }

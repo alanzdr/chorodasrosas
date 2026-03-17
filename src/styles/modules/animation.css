@@ -1,0 +1,93 @@
+@theme {
+
+  --delay-0: 0ms;
+  --delay-200: 200ms;
+  --delay-400: 400ms;
+  --delay-600: 600ms;
+  --delay-800: 800ms;
+  --delay-1000: 1000ms;
+  --delay-1200: 1200ms;
+  --delay-1400: 1400ms;
+  --delay-1600: 1600ms;
+  --delay-1800: 1800ms;
+  --delay-2000: 2000ms;
+  --delay-2200: 2200ms;
+  --delay-2400: 2400ms;
+  --delay-2600: 2600ms;
+  --delay-2800: 2800ms;
+  --delay-3000: 3000ms;
+  --delay-3200: 3200ms;
+  --delay-3400: 3400ms;
+  --delay-3600: 3600ms;
+  --delay-3800: 3800ms;
+  --delay-4000: 4000ms;
+
+  --animation-duration: var(--tw-duration, 1000ms);
+  --animation-function: var(
+    --tw-ease,
+    var(--default-transition-timing-function)
+  );
+  --animation-translate: 0 4rem;
+  --animation-opacity: 0;
+  --animation-delay: 0;
+}
+
+@utility delay-* {
+  --animation-delay: --value(--delay- *);
+  animation-delay: var(--animation-delay);
+}
+
+@keyframes show-animation {
+  0% {
+    opacity: 0;
+    translate: var(--animation-translate);
+  }
+  100% {
+    opacity: 1;
+    translate: none;
+  }
+}
+
+@layer components {
+  .animation-visible {
+    &.animation-content,
+    .animation-content {
+      opacity: 1;
+      translate: none;
+    }
+
+    &.animation-keyframes,
+    .animation-keyframes {
+      &.animation-content,
+      .animation-content {
+        opacity: 0;
+        translate: var(--animation-translate);
+        animation: show-animation var(--animation-duration)
+          var(--animation-function) var(--animation-delay) forwards;
+      }
+    }
+  }
+
+  .animation-keyframes {
+    &.animation-content,
+    .animation-content {
+      translate: var(--animation-translate);
+    }
+  }
+
+  .opacity-only {
+    --animation-translate: none;
+    &.animation-content,
+    .animation-content {
+      --animation-translate: none;
+    }
+  }
+
+  .animation-content {
+    opacity: 0;
+    translate: var(--animation-translate);
+    transition-property: opacity, translate;
+    transition-duration: var(--animation-duration);
+    transition-timing-function: var(--animation-function);
+  }
+}

@@ -1,23 +1,23 @@
-import 'styles/index.css'
+import '@/styles/index.css'
 
 import META from 'data/meta.json'
-import { Metadata } from 'next'
+import type { Metadata } from 'next'
 import { Amatic_SC, Roboto } from 'next/font/google'
 import Script from 'next/script'
-import React from 'react'
+import React, { ViewTransition } from 'react'
 import { twMerge } from 'tailwind-merge'
 import { getMetadata } from 'utils/seo'
 
 const amaticSC = Amatic_SC({
   weight: '700',
   subsets: ['latin'],
-  variable: '--font-amaticsc',
+  variable: '--font-family-amaticsc',
 })
 
 const roboto = Roboto({
   weight: '300',
   subsets: ['latin'],
-  variable: '--font-roboto',
+  variable: '--font-family-roboto',
 })
 
 export async function generateViewport() {
@@ -37,31 +37,30 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="pt-BR">
-      <head />
-      <body
-        className={twMerge(
-          amaticSC.variable,
-          roboto.variable,
-          'relative font-roboto'
-        )}
+    <ViewTransition default="none">
+      <html
+        lang="pt-BR"
+        className={twMerge(amaticSC.variable, roboto.variable, 'font-roboto')}
       >
-        {children}
-        <Script
-          async
-          defer
-          src="https://www.googletagmanager.com/gtag/js?id=G-X6CQH7YMH7"
-          strategy="lazyOnload"
-        />
-        <Script id="google-tag-manager" strategy="afterInteractive">
-          {`
+        <head />
+        <body>
+          {children}
+          <Script
+            async
+            defer
+            src="https://www.googletagmanager.com/gtag/js?id=G-X6CQH7YMH7"
+            strategy="lazyOnload"
+          />
+          <Script id="google-tag-manager" strategy="afterInteractive">
+            {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', 'G-X6CQH7YMH7');
           `}
-        </Script>
-      </body>
-    </html>
+          </Script>
+        </body>
+      </html>
+    </ViewTransition>
   )
 }

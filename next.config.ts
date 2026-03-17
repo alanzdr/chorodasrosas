@@ -1,6 +1,12 @@
 import fs from 'node:fs/promises'
 
-const config = {
+import type { NextConfig } from 'next'
+
+const config: NextConfig = {
+  experimental: {
+    inlineCss: true,
+    viewTransition: true,
+  },
   images: {
     remotePatterns: [
       {
@@ -9,13 +15,22 @@ const config = {
       },
     ],
     deviceSizes: [400, 768, 1024, 1280, 1400],
+    dangerouslyAllowLocalIP: true,
   },
-  webpack: function (config) {
-    config.module.rules.push({ test: /\.md$/, use: 'raw-loader' })
-    return config
+  turbopack: {
+    rules: {
+      '*.md': {
+        loaders: ['raw-loader'],
+        as: '*.js', // Tells Turbopack to treat the output as JS
+      },
+    },
   },
   async redirects() {
-    const redirects = []
+    const redirects: Array<{
+      source: string
+      destination: string
+      permanent: boolean
+    }> = []
 
     // Redirect old blog posts
     const files = await fs.readdir('./src/data/poems')

@@ -2,7 +2,8 @@ import AnimatedSection from 'components/AnimatedSection'
 import YoutubePlayer from 'components/YoutubePlayer'
 import META from 'data/meta.json'
 import React from 'react'
-import { animate } from 'zelindro-ui/utils/animation'
+
+import { animate } from '@/utils/animate'
 
 interface Props {
   title: string

@@ -1,6 +1,6 @@
 {
   "name": "chorodasrosas",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -9,36 +9,29 @@
     "deploy": "vercel --prod"
   },
   "dependencies": {
-    "autoprefixer": "^10.4.20",
-    "lucide-react": "^0.447.0",
-    "next": "^14.2.14",
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
-    "sharp": "^0.33.5",
-    "tailwind-merge": "^2.5.3",
-    "tailwind-variants": "^0.2.1",
-    "tailwindcss": "^3.4.13",
-    "zelindro-ui": "^0.0.2"
+    "@tailwindcss/postcss": "^4.2.1",
+    "autoprefixer": "^10.4.27",
+    "lucide-react": "^0.577.0",
+    "next": "^16.1.7",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
+    "sharp": "^0.34.5",
+    "tailwind-merge": "^3.5.0",
+    "tailwind-variants": "^3.2.2",
+    "tailwindcss": "^4.2.1"
   },
   "devDependencies": {
-    "@eslint/js": "^9.12.0",
-    "@next/eslint-plugin-next": "^14.2.14",
-    "@types/node": "^22.7.4",
-    "@types/react": "^18.3.11",
-    "@types/webpack-env": "^1.18.5",
-    "eslint": "^9.12.0",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-prettier": "^5.2.1",
-    "eslint-plugin-react": "^7.37.1",
-    "eslint-plugin-simple-import-sort": "^12.1.1",
-    "globals": "^15.10.0",
+    "@futurebrand/dev-tools": "^2.7.1",
+    "@types/node": "^25.5.0",
+    "@types/react": "^19.2.14",
+    "@types/webpack-env": "^1.18.8",
+    "eslint": "^10.0.3",
+    "globals": "^17.4.0",
     "gray-matter": "^4.0.3",
-    "marked": "^14.1.2",
-    "postcss": "^8.4.47",
-    "prettier": "^3.3.3",
-    "prettier-plugin-tailwindcss": "^0.6.8",
+    "marked": "^17.0.4",
+    "postcss": "^8.5.8",
+    "prettier": "^3.8.1",
     "raw-loader": "^4.0.2",
-    "typescript": "^5.6.2",
-    "typescript-eslint": "^8.8.0"
+    "typescript": "^5.9.3"
   }
 }

@@ -1,33 +1,92 @@
-'use client'
-
-import useIntersectObserver from 'hooks/use-intersect-observer'
 import React from 'react'
 import { twMerge } from 'tailwind-merge'
+import { tv } from 'tailwind-variants'
 
-interface Props extends React.HTMLAttributes<HTMLDivElement> {
-  Tag?: React.ElementType
+
+import AnimatedController from './animation-controller'
+
+interface Props extends React.HTMLProps<HTMLDivElement> {
+  Tag?: React.ElementType // HTML tag for the section, defaults to 'section'
+  firstElement?: boolean // Indicates if this is the first element in the section
+  lcp?: boolean // Indicates if this is the first element or should be prioritized for LCP
+  spacing?: 'none' | 'margin' | 'padding' // Spacing type
+  distance?: 'small' | 'medium' | 'large' // Spacing between sections size
+  relative?: boolean // Position relative or not (default is true)
 }
 
+const blockClass = tv({
+  base: 'section z-10 w-full',
+  variants: {
+    spacing: {
+      none: 'section-no-spacing',
+      margin: 'section-margin',
+      padding: 'section-padding',
+    },
+    distance: {
+      small: 'section-small',
+      medium: 'section-medium',
+      large: 'section-large',
+    },
+    relative: {
+      true: 'relative',
+      false: '',
+    },
+  },
+  defaultVariants: {
+    spacing: 'margin',
+    distance: 'medium',
+    relative: true,
+  },
+})
+
 const AnimatedSection: React.FC<Props> = ({
+
   className,
   children,
   Tag = 'section',
+  spacing,
+  distance,
+  relative,
+  firstElement,
+  lcp,
   ...rest
 }) => {
-  const [isVisible, intersectReference] = useIntersectObserver()
+  const isFirstElement = firstElement || lcp
+
+  if (isFirstElement) {
+    return (
+      <Tag
+        className={twMerge(
+          className,
+          'animation-visible animation-keyframes',
+          blockClass({
+            spacing,
+            distance,
+            relative,
+          })
+        )}
+        {...rest}
+      >
+        {children}
+      </Tag>
+    )
+  }
 
   return (
-    <Tag
-      ref={intersectReference}
+    <AnimatedController
       className={twMerge(
-        'animation-container',
         className,
-        isVisible ? 'animation-visible' : ''
+        blockClass({
+          spacing,
+          distance,
+          relative,
+        })
       )}
+      Tag={Tag}
       {...rest}
     >
       {children}
-    </Tag>
+    </AnimatedController>
   )
 }
 
